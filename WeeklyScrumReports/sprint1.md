@@ -29,3 +29,18 @@ Saumya Goyal
 #### What I am planning to work on next?
 
 1. Researching the design pattern that can be implemented other than the 12 patterns.
+
+
+#### Team Member Name
+
+Chungchen Ran
+
+#### What I did since last scrum?
+
+1. Code understanding (Done)
+
+#### What I am planning to work on next?
+
+1. Implement multiple lives for player character.
+2. Search for wav files.
+
