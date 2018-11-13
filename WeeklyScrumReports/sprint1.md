@@ -44,3 +44,16 @@ Chungchen Ran
 1. Implement multiple lives for player character.
 2. Search for wav files.
 
+#### Team Member Name
+
+Sai Harshith Reddy Gaddam
+
+#### What I did since last scrum?
+
+1. Code understanding (Done)
+2. Found character images for the game (Done)
+
+#### What I am planning to work on next?
+
+1. Use decorator pattern to display the characters when moved in a certain direction
+
