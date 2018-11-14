@@ -7,11 +7,11 @@
         <import target="java.awt.Color" enable="true"/>
     </imports>
     <implements/>
-    <fields>
-        <comment xml:space="preserve"/>
-    </fields>
+    <fields/>
     <constructors/>
     <methods>
+        <comment xml:space="preserve">WARNING: This file is auto-generated and any changes to it will be overwritten</comment>
+        <comment xml:space="preserve"/>
         <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
