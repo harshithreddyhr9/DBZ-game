@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Freeza extends Villian
+public class Freeza extends Scroller
 {
     /**
      * Act - do whatever the Freeza wants to do. This method is called whenever
@@ -14,9 +14,6 @@ public class Freeza extends Villian
      */
     public void act() 
     {
-        move(5);
-        turnAtEdge();
-        randomTurn();
-        lookForGoku();
+        // Add your action code here.
     }    
 }
