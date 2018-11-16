@@ -10,16 +10,16 @@ import java.util.Set;
  * This class defines a crab. Crabs live on the beach. They like sand worms 
  * (very yummy, especially the green ones).
  */
-public class Crab extends Actor
+public class Goku extends Actor
 {
-    private int wormsEaten;
+    private int ballscollected;
 
     /**
      * Initialise the crab
      */
-    public Crab()
+    public Goku()
     {
-        wormsEaten = 0;
+        ballscollected = 0;
     }
 
     /**
@@ -29,7 +29,7 @@ public class Crab extends Actor
     public void act()
     {
         checkKeyPress();
-        lookForWorm();
+        lookForBalls();
     }
 
     /**
@@ -39,16 +39,16 @@ public class Crab extends Actor
     public void checkKeyPress()
     {
         if (Greenfoot.isKeyDown("up")) {
-            turn(-25);
+            moveup(15);
         }
         if (Greenfoot.isKeyDown("down")) {
-            turn(25);
+            move(15);
         }
         if (Greenfoot.isKeyDown("right")) {
-            move(3);
+            move(15);
         }
         if (Greenfoot.isKeyDown("left")) {
-            move(-3);
+            move(-15);
         }
     }
 
@@ -56,12 +56,12 @@ public class Crab extends Actor
      * Check whether we have stumbled upon a worm.
      * If we have, eat it. If not, do nothing. If we have eaten eight worms, we win.
      */
-    public void lookForWorm()
+    public void lookForBalls()
     {
-        if (isTouching(Worm.class)) {
-            removeTouching(Worm.class);
-            wormsEaten = wormsEaten + 1;
-            getWorld().showText("Worms: " + wormsEaten, 100, 30);
+        if (isTouching(Dragonball.class)) {
+            removeTouching(Dragonball.class);
+            ballscollected = ballscollected + 1;
+            getWorld().showText("Balls: " + ballscollected, 100, 30);
             Greenfoot.playSound("slurp.wav");
         }
     }

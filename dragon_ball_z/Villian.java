@@ -12,7 +12,7 @@ import java.awt.Color;
  * In this version, we have added a sound effect, and the game stops when
  * a lobster eats the crab.
  */
-public class Lobster extends Actor
+public class Villian extends Actor
 {
 
     /**
@@ -23,7 +23,7 @@ public class Lobster extends Actor
         move(5);
         turnAtEdge();
         randomTurn();
-        lookForCrab();
+        lookForGoku();
     }
 
     /**
@@ -52,10 +52,10 @@ public class Lobster extends Actor
      * Try to pinch a crab. That is: check whether we have stumbled upon a crab.
      * If we have, remove the crab from the game, and stop the program running.
      */
-    public void lookForCrab()
+    public void lookForGoku()
     {
-        if (isTouching(Crab.class)) {
-            removeTouching(Crab.class);
+        if (isTouching(Goku.class)) {
+            removeTouching(Goku.class);
             Greenfoot.playSound("au.wav");
             Greenfoot.stop();
         }

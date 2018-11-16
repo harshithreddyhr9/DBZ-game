@@ -7,7 +7,7 @@ import java.awt.Color;
 /**
  * 
  */
-public class Worm extends Actor
+public class Dragonball extends Actor
 {
     /* */
 
