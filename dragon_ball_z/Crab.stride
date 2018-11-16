@@ -8,17 +8,25 @@
         <import target="java.util.List" enable="true"/>
         <import target="java.util.Set" enable="true"/>
     </imports>
-    <implements/>
-    <fields/>
-    <constructors>
+    <implements>
+        <implementstype type="LifeSubject" type-java="LifeSubject"/>
+    </implements>
+    <fields>
         <comment xml:space="preserve">WARNING: This file is auto-generated and any changes to it will be overwritten</comment>
-        <comment xml:space="preserve">private int wormsEaten;</comment>
+        <variable access="private" type="int" type-java="int" name="wormsEaten" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="remainingLives" enable="true"/>
+        <comment xml:space="preserve">John Ran</comment>
+        <variable access="private" type="ArrayList&lt;LifeObserver&gt;" type-java="ArrayList&lt;LifeObserver&gt;" name="observers" value="new ArrayList &lt; LifeObserver &gt; ( )" value-java="new ArrayList &lt; LifeObserver &gt; ( )" enable="true"/>
+    </fields>
+    <constructors>
+        <comment xml:space="preserve">John Ran</comment>
         <constructor access="public" enable="true">
             <javadoc xml:space="preserve">Initialise the crab</javadoc>
             <params/>
             <throws/>
             <body>
-                <comment xml:space="preserve">wormsEaten = 0;</comment>
+                <assign dest="wormsEaten" dest-java="wormsEaten" src="0" src-java="0" enable="true"/>
+                <assign dest="remainingLives" dest-java="remainingLives" src="3" src-java="3" enable="true"/>
             </body>
         </constructor>
     </constructors>
@@ -67,12 +75,74 @@
                 <if condition="isTouching ( Worm . class )" condition-java="isTouching ( Worm . class )" enable="true">
                     <ifStatements>
                         <call expression="removeTouching ( Worm . class )" expression-java="removeTouching ( Worm . class )" enable="true"/>
-                        <comment xml:space="preserve">wormsEaten = wormsEaten + 1; getWorld().showText("Worms: " + wormsEaten, 100, 30);</comment>
-                        <variable type="CrabWorld" type-java="CrabWorld" name="world" value="( CrabWorld ) getWorld ( )" value-java="( CrabWorld ) getWorld ( )" enable="true"/>
-                        <call expression="world . addWorm ( )" expression-java="world . addWorm ( )" enable="true"/>
+                        <assign dest="wormsEaten" dest-java="wormsEaten" src="wormsEaten + 1" src-java="wormsEaten + 1" enable="true"/>
+                        <comment xml:space="preserve">getWorld().showText("Worms: " + wormsEaten, 100, 30);</comment>
+                        <call expression="getWorld ( ) . showText ( &quot;Worms: &quot; + wormsEaten , 160 , 20 )" expression-java="getWorld ( ) . showText ( &quot;Worms: &quot; + wormsEaten , 160 , 20 )" enable="true"/>
+                        <comment xml:space="preserve">John Ran</comment>
                         <call expression="Greenfoot . playSound ( &quot;slurp.wav&quot; )" expression-java="Greenfoot . playSound ( &quot;slurp.wav&quot; )" enable="true"/>
                     </ifStatements>
                 </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="loseLife" enable="true">
+            <javadoc xml:space="preserve">Crab loses a life when touched by a Lobster Added by John Ran</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <assign dest="remainingLives" dest-java="remainingLives" src="remainingLives - 1" src-java="remainingLives - 1" enable="true"/>
+                <call expression="getWorld ( ) . showText ( &quot;Lives: &quot; + remainingLives , 50 , 20 )" expression-java="getWorld ( ) . showText ( &quot;Lives: &quot; + remainingLives , 50 , 20 )" enable="true"/>
+                <if condition="remainingLives != 0" condition-java="remainingLives != 0" enable="true">
+                    <ifStatements>
+                        <call expression="this . setLocation ( 265 , 192 )" expression-java="this . setLocation ( 265 , 192 )" enable="true"/>
+                    </ifStatements>
+                </if>
+                <call expression="notifyObservers ( )" expression-java="notifyObservers ( )" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="int" type-java="int" name="getLives" enable="true">
+            <javadoc xml:space="preserve">Return the number of lives Crab has left. Added by John Ran</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <return value="remainingLives" value-java="remainingLives" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="int" type-java="int" name="getNumWorms" enable="true">
+            <javadoc xml:space="preserve">Return the number of Worms eaten by Crab. Added by John Ran</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <return value="wormsEaten" value-java="wormsEaten" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="attach" enable="true">
+            <javadoc xml:space="preserve">Attach an observer to the ArrayList John Ran added this here for Observer Pattern</javadoc>
+            <params>
+                <param type="LifeObserver" type-java="LifeObserver" name="obj"/>
+            </params>
+            <throws/>
+            <body>
+                <call expression="observers . add ( obj )" expression-java="observers . add ( obj )" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="detach" enable="true">
+            <javadoc xml:space="preserve">Detach an observer from the ArrayList John Ran added this here for Observer Pattern</javadoc>
+            <params>
+                <param type="LifeObserver" type-java="LifeObserver" name="obj"/>
+            </params>
+            <throws/>
+            <body>
+                <call expression="observers . remove ( obj )" expression-java="observers . remove ( obj )" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="notifyObservers" enable="true">
+            <javadoc xml:space="preserve">Notify all observers of change in number of lives John Ran added this here for Observer Pattern</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <foreach type="LifeObserver" type-java="LifeObserver" var="obj" collection="observers" collection-java="observers" enable="true">
+                    <call expression="obj . update ( )" expression-java="obj . update ( )" enable="true"/>
+                </foreach>
             </body>
         </method>
     </methods>

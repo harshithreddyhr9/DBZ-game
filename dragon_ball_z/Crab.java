@@ -9,19 +9,23 @@ import java.util.Set;
 /**
  * This class defines a crab. Crabs live on the beach. They like sand worms (very yummy, especially the green ones).
  */
-public class Crab extends Actor
+public class Crab extends Actor implements LifeSubject
 {
-
     /* WARNING: This file is auto-generated and any changes to it will be overwritten*/
+    private int wormsEaten;
+    private int remainingLives;
+    /* John Ran*/
+    private ArrayList<LifeObserver> observers = new ArrayList < LifeObserver > ( );
 
-    /* private int wormsEaten;*/
+    /* John Ran*/
 
     /**
      * Initialise the crab
      */
     public Crab()
     {
-        /* wormsEaten = 0;*/
+        wormsEaten = 0;
+        remainingLives = 3;
     }
 
     /**
@@ -59,10 +63,66 @@ public class Crab extends Actor
     {
         if (isTouching ( Worm . class )) {
             removeTouching ( Worm . class );
-            /* wormsEaten = wormsEaten + 1; getWorld().showText("Worms: " + wormsEaten, 100, 30);*/
-            CrabWorld world = ( CrabWorld ) getWorld ( );
-            world . addWorm ( );
+            wormsEaten = wormsEaten + 1;
+            /* getWorld().showText("Worms: " + wormsEaten, 100, 30);*/
+            getWorld ( ) . showText ( "Worms: " + wormsEaten , 160 , 20 );
+            /* John Ran*/
             Greenfoot . playSound ( "slurp.wav" );
+        }
+    }
+
+    /**
+     * Crab loses a life when touched by a Lobster Added by John Ran
+     */
+    public void loseLife()
+    {
+        remainingLives = remainingLives - 1;
+        getWorld ( ) . showText ( "Lives: " + remainingLives , 50 , 20 );
+        if (remainingLives != 0) {
+            this . setLocation ( 265 , 192 );
+        }
+        notifyObservers ( );
+    }
+
+    /**
+     * Return the number of lives Crab has left. Added by John Ran
+     */
+    public int getLives()
+    {
+        return remainingLives;
+    }
+
+    /**
+     * Return the number of Worms eaten by Crab. Added by John Ran
+     */
+    public int getNumWorms()
+    {
+        return wormsEaten;
+    }
+
+    /**
+     * Attach an observer to the ArrayList John Ran added this here for Observer Pattern
+     */
+    public void attach(LifeObserver obj)
+    {
+        observers . add ( obj );
+    }
+
+    /**
+     * Detach an observer from the ArrayList John Ran added this here for Observer Pattern
+     */
+    public void detach(LifeObserver obj)
+    {
+        observers . remove ( obj );
+    }
+
+    /**
+     * Notify all observers of change in number of lives John Ran added this here for Observer Pattern
+     */
+    public void notifyObservers()
+    {
+        for (final LifeObserver obj : observers) {
+            obj . update ( );
         }
     }
 }

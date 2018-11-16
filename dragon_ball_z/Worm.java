@@ -10,9 +10,7 @@ import java.awt.Color;
 public class Worm extends Actor
 {
 
-    /* WARNING: This file is auto-generated and any changes to it will be overwritten*/
-
-    /* */
+    /* WARNING: This file is auto-generated and any changes to it will be overwritten */
 
     /**
      * 

@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class name="Lobster" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
-    <javadoc xml:space="preserve">A lobster. Lobsters live on the beach. They like to eat crabs. (Well, in our game they do...) Version: 2
-The lobster walks around randomly. If it runs into a crab it eats it. In this version, we have added a sound effect, and the game stops when a lobster eats the crab.</javadoc>
+    <javadoc xml:space="preserve">A lobster. Lobsters live on the beach. They like to eat crabs. (Well, in our game they do...) Version: 2 The lobster walks around randomly. If it runs into a crab it eats it. In this version, we have added a sound effect, and the game stops when a lobster eats the crab.</javadoc>
     <imports>
         <import target="java.util.*" enable="true"/>
         <import target="greenfoot.*" enable="true"/>
         <import target="java.awt.Color" enable="true"/>
     </imports>
-    <implements/>
-    <fields/>
-    <constructors/>
-    <methods>
+    <implements>
+        <implementstype type="LifeObserver" type-java="LifeObserver"/>
+    </implements>
+    <fields>
         <comment xml:space="preserve">WARNING: This file is auto-generated and any changes to it will be overwritten</comment>
+        <variable access="private" type="CrabWorld" type-java="CrabWorld" name="world" enable="true"/>
+        <comment xml:space="preserve">John Ran</comment>
+        <variable access="private" type="int" type-java="int" name="posX" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="posY" enable="true"/>
+    </fields>
+    <constructors>
+        <comment xml:space="preserve">John Ran added parameters</comment>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Initialize the Lobster, John Ran</javadoc>
+            <params>
+                <param type="int" type-java="int" name="x"/>
+                <param type="int" type-java="int" name="y"/>
+            </params>
+            <throws/>
+            <body>
+                <assign dest="this . world" dest-java="this . world" src="( CrabWorld ) getWorld ( )" src-java="( CrabWorld ) getWorld ( )" enable="true"/>
+                <assign dest="posX" dest-java="posX" src="x" src-java="x" enable="true"/>
+                <assign dest="posY" dest-java="posY" src="y" src-java="y" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
         <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve">Do whatever lobsters do.</javadoc>
             <params/>
@@ -54,11 +75,33 @@ The lobster walks around randomly. If it runs into a crab it eats it. In this ve
             <body>
                 <if condition="isTouching ( Crab . class )" condition-java="isTouching ( Crab . class )" enable="true">
                     <ifStatements>
-                        <call expression="removeTouching ( Crab . class )" expression-java="removeTouching ( Crab . class )" enable="true"/>
+                        <comment xml:space="preserve">removeTouching(Crab.class);</comment>
+                        <variable type="Crab" type-java="Crab" name="crab" value="getWorld ( ) . getObjects ( Crab . class ) . get ( 0 )" value-java="getWorld ( ) . getObjects ( Crab . class ) . get ( 0 )" enable="true"/>
+                        <comment xml:space="preserve">John Ran</comment>
                         <call expression="Greenfoot . playSound ( &quot;au.wav&quot; )" expression-java="Greenfoot . playSound ( &quot;au.wav&quot; )" enable="true"/>
-                        <variable type="CrabWorld" type-java="CrabWorld" name="world" value="( CrabWorld ) getWorld ( )" value-java="( CrabWorld ) getWorld ( )" enable="true"/>
-                        <call expression="world . loseLife ( )" expression-java="world . loseLife ( )" enable="true"/>
-                        <comment xml:space="preserve">Greenfoot.stop();</comment>
+                        <call expression="crab . loseLife ( )" expression-java="crab . loseLife ( )" enable="true"/>
+                        <comment xml:space="preserve">John Ran</comment>
+                        <if condition="crab . getLives ( ) == 0" condition-java="crab . getLives ( ) == 0" enable="true">
+                            <ifStatements>
+                                <call expression="removeTouching ( Crab . class )" expression-java="removeTouching ( Crab . class )" enable="true"/>
+                                <comment xml:space="preserve">John Ran</comment>
+                                <call expression="Greenfoot . stop ( )" expression-java="Greenfoot . stop ( )" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="update" enable="true">
+            <javadoc xml:space="preserve">Update the observer's state when the subject state changes. John Ran added this here for Observer Pattern</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Crab" type-java="Crab" name="crab" value="getWorld ( ) . getObjects ( Crab . class ) . get ( 0 )" value-java="getWorld ( ) . getObjects ( Crab . class ) . get ( 0 )" enable="true"/>
+                <comment xml:space="preserve">John Ran</comment>
+                <if condition="crab . getLives ( ) != 0" condition-java="crab . getLives ( ) != 0" enable="true">
+                    <ifStatements>
+                        <call expression="this . setLocation ( posX , posY )" expression-java="this . setLocation ( posX , posY )" enable="true"/>
                     </ifStatements>
                 </if>
             </body>
