@@ -1,31 +1,30 @@
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
-import java.awt.Color;
 
 /**
  * 
  */
-public class CrabWorld extends World implements LevelHandler
+public class LevelTwo extends World implements LevelHandler
 {
 
-    /**
-     * 
-     */
-    
     LevelHandler next;
-    CurrentLevel currlevel;
-    public CrabWorld(CurrentLevel l)
+    CurrentLevel level;
+    /**
+     * Constructor for objects of class LevelTwo.
+     */
+    public LevelTwo(CurrentLevel l)
     {
         super(800, 800, 1);
-        this.currlevel = l;
+        this.level = l;
         prepare();
     }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    
+    public void startWorld()
+    {
+        //do nothing for now
+    }
+    
     private void prepare()
     {
         Crab crab =  new Crab();
@@ -55,15 +54,7 @@ public class CrabWorld extends World implements LevelHandler
         Lobster lobster2 =  new Lobster();
         addObject(lobster2, 432, 81);
         Lobster lobster3 =  new Lobster();
-        addObject(lobster3, 471, 382);
-      
-        
-    }
-    
-    public void startWorld()
-    {
-        if(this.currlevel.getLevel().equals("level1"))
-            Greenfoot.setWorld(this);
+        addObject(lobster3, 471, 382); 
     }
     
     public void setNextLevel(LevelHandler NextLevel)

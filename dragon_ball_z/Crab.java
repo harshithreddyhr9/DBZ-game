@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -45,7 +44,7 @@ public class Crab extends Actor
             turn(25);
         }
         if (Greenfoot.isKeyDown("right")) {
-            move(3);
+            move(5);
         }
         if (Greenfoot.isKeyDown("left")) {
             move(-3);
