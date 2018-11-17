@@ -1,16 +1,20 @@
 #BlueJ class context
 comment0.target=Crab
-comment0.text=\n\ This\ class\ defines\ a\ crab.\ Crabs\ live\ on\ the\ beach.\ They\ like\ sand\ worms\ \n\ (very\ yummy,\ especially\ the\ green\ ones).\n
+comment0.text=\r\n\ This\ class\ defines\ a\ crab.\ Crabs\ live\ on\ the\ beach.\ They\ like\ sand\ worms\ \r\n\ (very\ yummy,\ especially\ the\ green\ ones).\r\n
 comment1.params=
 comment1.target=Crab()
-comment1.text=\n\ Initialise\ the\ crab\n
+comment1.text=\r\n\ Initialise\ the\ crab\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ Act\ -\ do\ whatever\ the\ crab\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ \n
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ crab\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ \r\n
 comment3.params=
 comment3.target=void\ checkKeyPress()
-comment3.text=\n\ Check\ whether\ a\ control\ key\ on\ the\ keyboard\ has\ been\ pressed.\n\ If\ it\ has,\ react\ accordingly.\n
+comment3.text=\r\n\ Check\ whether\ a\ control\ key\ on\ the\ keyboard\ has\ been\ pressed.\r\n\ If\ it\ has,\ react\ accordingly.\r\n
 comment4.params=
 comment4.target=void\ lookForWorm()
-comment4.text=\n\ Check\ whether\ we\ have\ stumbled\ upon\ a\ worm.\n\ If\ we\ have,\ eat\ it.\ If\ not,\ do\ nothing.\ If\ we\ have\ eaten\ eight\ worms,\ we\ win.\n
-numComments=5
+comment4.text=\r\n\ Check\ whether\ we\ have\ stumbled\ upon\ a\ worm.\r\n\ If\ we\ have,\ eat\ it.\ If\ not,\ do\ nothing.\ If\ we\ have\ eaten\ eight\ worms,\ we\ win.\r\n
+comment5.params=obj
+comment5.target=void\ attach(PointsObserver)
+comment6.params=
+comment6.target=void\ notifyObservers()
+numComments=7

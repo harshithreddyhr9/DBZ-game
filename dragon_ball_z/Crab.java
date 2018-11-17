@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -10,15 +9,19 @@ import java.util.Set;
  * This class defines a crab. Crabs live on the beach. They like sand worms 
  * (very yummy, especially the green ones).
  */
-public class Crab extends Actor
+public class Crab extends Actor implements PointsSubject
+
 {
     private int wormsEaten;
+    //private PointsObserver gm;
+    private ArrayList<PointsObserver> observers ;
 
     /**
      * Initialise the crab
      */
     public Crab()
     {
+        observers = new ArrayList<PointsObserver>();
         wormsEaten = 0;
     }
 
@@ -61,8 +64,26 @@ public class Crab extends Actor
         if (isTouching(Worm.class)) {
             removeTouching(Worm.class);
             wormsEaten = wormsEaten + 1;
-            getWorld().showText("Worms: " + wormsEaten, 100, 30);
+            notifyObservers();
+            
             Greenfoot.playSound("slurp.wav");
         }
     }
+    
+    public void attach(PointsObserver obj){
+        System.out.println("hello");
+        System.out.println(obj);
+        System.out.println(observers);
+        observers.add(obj);
+       System.out.println(observers);
+    }
+    
+    public void notifyObservers(){
+        		for (int i=0; i<observers.size(); i++)
+		{
+			PointsObserver observer = observers.get(i) ;
+			observer.updatePoints(wormsEaten) ;
+		}
+    }
+    
 }
