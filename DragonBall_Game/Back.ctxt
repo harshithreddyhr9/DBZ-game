@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Back
+comment0.text=\r\n\ Button\ to\ close\ a\ window.\r\n\ \r\n\ @author\ Rucha\ Apte\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=a
+comment1.target=Back(greenfoot.Actor)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Back\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ click()
+comment3.text=\r\n\ Close\ the\ window\ to\ see\ the\ menu\ again.\r\n
+numComments=4
