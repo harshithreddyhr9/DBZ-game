@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Help
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ButtonHelp\ here.\r\n\ \r\n\ @author\ Rucha\ Apte\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Help()
+comment2.params=
+comment2.target=HelpScreen\ getHelp()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ click()
+comment5.params=newCmd
+comment5.target=void\ setCommand(ButtonCommand)
+numComments=6
