@@ -23,4 +23,16 @@ Saumya Goyal
 2. Draw class diagram of the observer pattern implemented
 3. Search for images for villians  
 
+**Team Member Name**
+Chungchen Ran
+
+**What I did since last scrum?**
+1. Created a basic lives counter.
+2. Found two wav files.
+
+**What I am planning to work on next?**
+1. Implement a pattern with the lives counter, possibly Iterator.
+2. Add modified lives counter with modified gameplay.
+3. Find more wav files.
+
 
