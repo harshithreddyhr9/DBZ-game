@@ -5,9 +5,22 @@
 Sai Harshith Reddy Gaddam  
 
 **What I did since last scrum?**
-Modified the gameplay  
-Command pattern for the menu  
+1. Modified the gameplay  
+2. Command pattern for the menu  
 
 **What I am planning to work on next?**
-Add powers to the villains  
-Class diagram of the command pattern implementation  
+1. Add powers to the villains  
+2. Class diagram of the command pattern implementation  
+
+**Team Member Name**  
+Saumya Goyal 
+
+**What I did since last scrum?**
+1. Added Observer Pattern to the score board 
+
+**What I am planning to work on next?**
+1. Add observer pattern to the modified gameplay
+2. Draw class diagram of the observer pattern implemented
+3. Search for images for villians  
+
+
