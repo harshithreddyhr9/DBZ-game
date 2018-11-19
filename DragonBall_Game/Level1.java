@@ -10,7 +10,7 @@ public class Level1 extends World
 {
     
     private static final String bgImageName = "newbg.png";    
-    private static final double scrollSpeed = 10;
+    private static final double scrollSpeed = 7;
     private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
     private GreenfootImage bgImage, bg;
     private int scrollPosition = 0;
@@ -59,4 +59,5 @@ public class Level1 extends World
         
     }
     
+}
     
