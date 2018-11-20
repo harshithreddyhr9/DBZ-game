@@ -31,10 +31,12 @@ public class Goku extends Actor
     public void checkKeyPress()
     {
         if (Greenfoot.isKeyDown("up")){
-            setLocation(getX(), getY()-5);
+             if(this.getY()-this.getImage().getHeight()/2 > 0)
+                this.setLocation(this.getX(), this.getY() - 5);
         }
         if(Greenfoot.isKeyDown("down")){
-            setLocation(getX(), getY()+5);
+            if(this.getY()+this.getImage().getHeight()/2 < getWorld().getHeight())
+                this.setLocation(this.getX(), this.getY() + 5);
         }
     }
 
