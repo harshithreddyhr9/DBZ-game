@@ -35,4 +35,15 @@ Chungchen Ran
 2. Add modified lives counter with modified gameplay.
 3. Find more wav files.
 
+**Team Member Name**
+Shabari Girish Ganapathy
+
+**What I did since last scrum?**
+1. Completed movement between level using chaing of responsibility.
+2. Half the activity diagram for character movement and gameplay (only half as gameplay has changed a little).
+
+**What I am planning to work on next?**
+1. Class Diagram to show Chain of responsibility.
+2. Place dragon balls in random order in the game.
+
 
