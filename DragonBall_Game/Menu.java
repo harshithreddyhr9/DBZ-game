@@ -14,6 +14,9 @@ public class Menu extends World
     private PlayCommand playCmd;
     private HelpCommand helpCmd;
     private String bgImageName;
+    LevelHandler level1;
+    LevelHandler level2;
+    CurrentLevel l;
     /**
      * Constructor for objects of class Menu.
      * 
@@ -31,6 +34,17 @@ public class Menu extends World
         buttonHelp = new Help();
         playCmd = new PlayCommand();
         helpCmd = new HelpCommand();
+        
+        l = new CurrentLevel();
+        level1 = new Level1(l);
+        level2 = new Level2(l);
+        
+        /**
+         * Appending levels one after the other using
+         * Chain of Responsibilty.
+         */
+        level1.setNextLevel(level2);
+        
         prepare();
     }
     
@@ -49,7 +63,7 @@ public class Menu extends World
         addObject(buttonHelp, 740,502);
         buttonPlay.setCommand(playCmd);
         buttonHelp.setCommand(helpCmd);
-
+        
         playCmd.setReceiver(
 
             new Receiver()
@@ -57,7 +71,7 @@ public class Menu extends World
                 public void performAction()
                 {
                     if(Greenfoot.mouseClicked(buttonPlay)){
-                        Greenfoot.setWorld(new Level1());
+                        level1.startWorld();
                     }
                 }
             });

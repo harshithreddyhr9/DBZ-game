@@ -1,13 +1,8 @@
 #BlueJ class context
-comment0.target=Level1
-comment0.text=\n\ Write\ a\ description\ of\ class\ Level1\ here.\n\ \n\ @author\ Sai\ Harshith\n\ @version\ (V\ 1.0\ 11/18/2018)\n
-<<<<<<< HEAD
-comment1.params=
-comment1.target=Level1()
-=======
+comment0.target=Level2
+comment0.text=\n\ Write\ a\ description\ of\ class\ Level2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=l
-comment1.target=Level1(CurrentLevel)
->>>>>>> 851b134d87b4a2bd55ac96a15af06c8574d0ab8a
+comment1.target=Level2(CurrentLevel)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=position
