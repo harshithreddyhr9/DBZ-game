@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level1 here.
+ * Write a description of class Level2 here.
  * 
- * @author Sai Harshith
- * @version (V 1.0 11/18/2018)
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Level1 extends World implements LevelHandler
+public class Level2 extends World implements LevelHandler
 {
-    
+
     private static final String bgImageName = "newbg.png";    
     private static final double scrollSpeed = 7;
     private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
@@ -19,7 +19,7 @@ public class Level1 extends World implements LevelHandler
     public CurrentLevel currlevel;
 
     
-    public Level1(CurrentLevel l)
+    public Level2(CurrentLevel l)
     {    
         
         super(1440, 542, 1, false);
@@ -31,7 +31,6 @@ public class Level1 extends World implements LevelHandler
         this.currlevel = l;
         prepare();
     }
-    
        public void act()
     {
                 scrollPosition -= scrollSpeed;
@@ -65,15 +64,15 @@ public class Level1 extends World implements LevelHandler
         
     }
     
+    
     public void startWorld()
     {
-        Greenfoot.setWorld(this);
+        if(this.currlevel.getLevel().equals("level1"))
+            Greenfoot.setWorld(this);
     }
     
     public void setNextLevel(LevelHandler NextLevel)
     {
         this.next = NextLevel;
     }
-    
 }
-    

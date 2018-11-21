@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=LevelHandler
+comment1.params=
+comment1.target=void\ startWorld()
+comment2.params=NextLevel
+comment2.target=void\ setNextLevel(LevelHandler)
+numComments=3
