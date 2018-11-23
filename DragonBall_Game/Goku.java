@@ -14,6 +14,8 @@ public class Goku extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int ballscollected;
+    private LivesAggregate lifeAgg;
+    private LivesIterator lifeIter;
 
     /**
      * Initialise the Goku
@@ -21,6 +23,8 @@ public class Goku extends Actor
     public Goku()
     {
         ballscollected = 0;
+        lifeAgg = new LivesAggImpl(3);
+        lifeIter = lifeAgg.createIterator();    // set up lives iterator
     }
     public void act() 
     {
@@ -44,4 +48,13 @@ public class Goku extends Actor
     {
         
     }  
+    
+    public void loseLife()
+    {
+        if (!lifeIter.isDone())
+        {
+            getWorld().showText("Lives: " + lifeIter.currentItem(), 100, 30);
+            lifeIter.next();
+        }
+    }
 }

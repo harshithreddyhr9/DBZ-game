@@ -9,6 +9,14 @@ import java.util.ArrayList;
 public class LivesAggImpl implements LivesAggregate
 {
     private ArrayList<String> livesRemaining = new ArrayList<String>();
+    
+    /**
+     * Constructor for LivesAggImpl
+     */
+    public LivesAggImpl(int lives)
+    {
+        setLives(lives);
+    }
 
     /**
      * Set the number of lives remaining.
