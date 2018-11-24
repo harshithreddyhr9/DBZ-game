@@ -14,9 +14,11 @@ public class Level1 extends World implements LevelHandler
     private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
     private GreenfootImage bgImage, bg;
     private int scrollPosition = 0;
-    
     public LevelHandler next;
     public CurrentLevel currlevel;
+    
+    public One oneBall;
+    public int ballPos = 600;
 
     
     public Level1(CurrentLevel l)
@@ -34,18 +36,20 @@ public class Level1 extends World implements LevelHandler
     
        public void act()
     {
-                scrollPosition -= scrollSpeed;
+        scrollPosition -= scrollSpeed;
         while(scrollSpeed > 0 && scrollPosition < -picWidth) scrollPosition += picWidth;
         while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picWidth;
-        paint(scrollPosition);
+        paint(scrollPosition,scrollSpeed);
         
     }
   
-    private void paint(int position)
+    private void paint(int position,double scrollSpeed)
     {
         GreenfootImage bg = getBackground();
         bg.drawImage(bg, position, 0);
         bg.drawImage(bgImage, position + picWidth, 0);
+        ballPos -= (int) scrollSpeed;
+        oneBall.setLocation(ballPos,135);
     } 
     
     private void prepare()
@@ -62,6 +66,8 @@ public class Level1 extends World implements LevelHandler
         Cell c = new Cell();
         addObject(c,90,435);
         
+        oneBall = new One();
+        addObject(oneBall,600,135);
         
     }
     
