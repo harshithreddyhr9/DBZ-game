@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Goku
 comment0.text=\n\ Write\ a\ description\ of\ class\ Goku\ here.\n\ \n\ @author\ (Sai\ Harshith)\ \n\ @version\ (V\ 1.0\ 11/18/2018)\n
-comment1.params=
-comment1.target=Goku()
+comment1.params=level
+comment1.target=Goku(LevelHandler)
 comment1.text=\n\ Initialise\ the\ Goku\n
 comment2.params=
 comment2.target=void\ act()
@@ -11,9 +11,7 @@ comment3.target=void\ checkKeyPress()
 comment4.params=
 comment4.target=void\ lookForBalls()
 comment5.params=
-<<<<<<< HEAD
 comment5.target=Goku\ getGokuObject()
-=======
-comment5.target=void\ loseLife()
->>>>>>> 1d2e3655f204760b4864f62b46f4bcf64b6c4957
-numComments=6
+comment6.params=
+comment6.target=void\ loseLife()
+numComments=7

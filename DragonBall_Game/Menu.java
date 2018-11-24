@@ -17,6 +17,7 @@ public class Menu extends World
    
     LevelHandler level1;
     LevelHandler level2;
+    LevelHandler wish;
     CurrentLevel l;
     int count=0;
 
@@ -42,13 +43,13 @@ public class Menu extends World
         l = new CurrentLevel();
         level1 = new Level1(l);
         level2 = new Level2(l);
-        
+        wish = new Wish(l);
         /**
          * Appending levels one after the other using
          * Chain of Responsibilty.
          */
         level1.setNextLevel(level2);
-        
+        level2.setNextLevel(wish);
         prepare();
     }
     

@@ -66,8 +66,14 @@ public class Wish extends World implements LevelHandler
     {
         this.next = NextLevel;
     }
+    
+    public void startNext(){
+        //do nothing here
+    }
+    
     public Wish getLevel(){
         return this;
-}
+    }
+    
 }
     

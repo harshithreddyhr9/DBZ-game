@@ -18,7 +18,7 @@ public class Level1 extends World implements LevelHandler
     public CurrentLevel currlevel;
     
 
-    public One oneBall;
+    public DragonBall oneBall;
     public int ballPos = 600;
 
 
@@ -60,7 +60,7 @@ public class Level1 extends World implements LevelHandler
     
     private void prepare()
     {   
-        Goku goku = new Goku();
+        Goku goku = new Goku(this);
         addObject(goku,422,135);
         
         Buu buu = new Buu(goku);
@@ -86,8 +86,14 @@ public class Level1 extends World implements LevelHandler
     {
         this.next = NextLevel;
     }
-    public Level1 getLevel(){
+    
+    public void startNext(){
+        this.next.startWorld();
+    }
+    
+    public Level1 getLevel()
+    {
         return this;
-}
+    }
 }
     

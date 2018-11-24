@@ -2,6 +2,8 @@
 comment0.target=LevelHandler
 comment1.params=
 comment1.target=void\ startWorld()
-comment2.params=NextLevel
-comment2.target=void\ setNextLevel(LevelHandler)
-numComments=3
+comment2.params=
+comment2.target=void\ startNext()
+comment3.params=NextLevel
+comment3.target=void\ setNextLevel(LevelHandler)
+numComments=4

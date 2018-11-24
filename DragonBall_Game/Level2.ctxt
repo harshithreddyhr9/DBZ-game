@@ -1,16 +1,18 @@
 #BlueJ class context
 comment0.target=Level2
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Level2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Level2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=l
 comment1.target=Level2(CurrentLevel)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=position
-comment3.target=void\ paint(int)
+comment3.params=position\ scrollSpeed
+comment3.target=void\ paint(int,\ double)
 comment4.params=
 comment4.target=void\ prepare()
 comment5.params=
 comment5.target=void\ startWorld()
-comment6.params=NextLevel
-comment6.target=void\ setNextLevel(LevelHandler)
-numComments=7
+comment6.params=
+comment6.target=void\ startNext()
+comment7.params=NextLevel
+comment7.target=void\ setNextLevel(LevelHandler)
+numComments=8
