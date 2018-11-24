@@ -52,13 +52,13 @@ public class Level2 extends World implements LevelHandler
         Goku goku = new Goku();
         addObject(goku,422,135);
         
-        Buu buu = new Buu();
+        Buu buu = new Buu(goku);
         addObject(buu, 90,105);
         
-        Frieza f = new Frieza();
+        Frieza f = new Frieza(goku);
         addObject(f,90,235);
         
-        Cell c = new Cell();
+        Cell c = new Cell(goku);
         addObject(c,90,435);
         
         

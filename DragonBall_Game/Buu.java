@@ -8,24 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Buu extends Actor
 {
-    int count = 0;
+    Timer gettime = new Timer();
+    int count=0;
+    private World w = getWorld(); 
+    Goku goku;
+    
     /**
      * Act - do whatever the Buu wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Buu(Goku goku){
+        this.goku = goku;
+    }
     public void act() 
     {
-      count++;
-      if(count == 50){
-    if (getY() == 105){
-      setLocation(getX(), getY()+20);
-      count =0;}// "if not at target y-coordinate, move toward target y-coordinate"
-      else if (getY() > 105){
-      setLocation(getX(), getY()-40);
-      count =0;}// "if not at target y-coordinate, move toward target y-coordinate"
-      else if (getY() < 105){
-      setLocation(getX(), getY()+40);
-      count =0;}
+        
+        int diff = this.goku.getY()-this.getY(); 
+        if(diff<5 && diff >-5)
+        attackGoku();
+      
     }
-    }    
+    
+    public void attackGoku(){
+        if(gettime.TimeElapsed() > 100){
+            World world = getWorld();
+            BuuFire bf = new BuuFire();
+            world.addObject(bf, this.getX()+this.getImage().getWidth()/2, this.getY());
+            gettime.fire();
+            
+
+    
 }
+}
+}
+

@@ -43,5 +43,9 @@ public class Goku extends Actor
     public void lookForBalls()
     {
         
-    }  
+    }
+    
+    public Goku getGokuObject(){
+        return this;
+    }
 }

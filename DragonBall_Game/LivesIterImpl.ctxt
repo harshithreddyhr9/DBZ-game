@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=LivesIterImpl
+comment0.text=\n\ Write\ a\ description\ of\ class\ LivesIterImpl\ here.\n\ \n\ @author\ Chungchen\ Ran\n\ @version\ v0.1\ 11/22/18\n
+comment1.params=lives
+comment1.target=LivesIterImpl(java.util.ArrayList)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ LivesIterImpl\n
+comment2.params=
+comment2.target=java.lang.String\ first()
+comment2.text=\n\ Return\ the\ first\ number.\n
+comment3.params=
+comment3.target=java.lang.String\ next()
+comment3.text=\n\ Return\ the\ next\ number.\n
+comment4.params=
+comment4.target=java.lang.String\ currentItem()
+comment4.text=\n\ Return\ the\ current\ number.\n
+comment5.params=
+comment5.target=boolean\ isDone()
+comment5.text=\n\ Check\ if\ the\ iterator\ is\ done.\n
+numComments=6

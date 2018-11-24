@@ -10,4 +10,6 @@ comment3.params=
 comment3.target=void\ checkKeyPress()
 comment4.params=
 comment4.target=void\ lookForBalls()
-numComments=5
+comment5.params=
+comment5.target=Goku\ getGokuObject()
+numComments=6

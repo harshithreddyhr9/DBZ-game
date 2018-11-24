@@ -8,24 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cell extends Actor
 {
-    int count = 0;
+    Timer gettime = new Timer();
+    int count=0;
+    Goku goku;
     /**
      * Act - do whatever the Cell wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Cell(Goku goku){
+        this.goku =goku;
+    }
     public void act() 
     {
-             count++;
-      if(count == 50){
-    if (getY() == 235){
-      setLocation(getX(), getY()+20);
-      count =0;}// "if not at target y-coordinate, move toward target y-coordinate"
-      else if (getY() > 235){
-      setLocation(getX(), getY()-40);
-      count =0;}// "if not at target y-coordinate, move toward target y-coordinate"
-      else if (getY() < 235){
-      setLocation(getX(), getY()+40);
-      count =0;}
-    }
-    }    
+        
+        
+        int diff = this.goku.getY()-this.getY(); 
+        if(diff<5 && diff >-5)
+        attackGoku();
+      
+    } 
+    public void attackGoku(){
+        //if(gettime.TimeElapsed() > 100){
+            World world = getWorld();
+            CellFire cf = new CellFire();
+            world.addObject(cf, this.getX()+this.getImage().getWidth()/2, this.getY());
+            gettime.fire();
+            
+
+    
+//}
+}
 }
