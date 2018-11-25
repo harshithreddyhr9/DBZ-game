@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Goku
 comment0.text=\n\ Write\ a\ description\ of\ class\ Goku\ here.\n\ \n\ @author\ (Sai\ Harshith)\ \n\ @version\ (V\ 1.0\ 11/18/2018)\n
-comment1.params=level
-comment1.target=Goku(LevelHandler)
+comment1.params=l\ level
+comment1.target=Goku(CurrentLevel,\ LevelHandler)
 comment1.text=\n\ Initialise\ the\ Goku\n
 comment2.params=
 comment2.target=void\ act()

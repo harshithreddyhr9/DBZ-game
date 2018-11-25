@@ -17,16 +17,19 @@ public class Level2 extends World implements LevelHandler
     
     public LevelHandler next;
     public CurrentLevel currlevel;
-    
+    public WhichBall whichball;
     public DragonBall oneBall;
     public int ballPos = 600;
+    
+    public int ballsCollected = 0;
+    public int ballsNeeded = 7;
     
     public Level2(CurrentLevel l)
     {    
         
         super(1440, 542, 1, false);
         setBackground(bgImageName);
-        
+        whichball = new WhichBall();
         bgImage = new GreenfootImage(getBackground());
         bg = new GreenfootImage(picWidth, getHeight());
         bg.drawImage(bgImage, 0, 0);
@@ -38,6 +41,18 @@ public class Level2 extends World implements LevelHandler
         scrollPosition -= scrollSpeed;
         while(scrollSpeed > 0 && scrollPosition < -picWidth) scrollPosition += picWidth;
         while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picWidth;
+        
+        if(currlevel.getNBall() != ballsCollected && currlevel.getNBall() != ballsNeeded)
+        {
+            ballsCollected = currlevel.getNBall();
+            addBall();
+        }
+        
+        if(currlevel.getNBall() == ballsNeeded)
+        {
+            this.next.startWorld();
+        }
+        
         paint(scrollPosition,scrollSpeed);
         
     }
@@ -54,7 +69,7 @@ public class Level2 extends World implements LevelHandler
     
     private void prepare()
     {   
-        Goku goku = new Goku(this);
+        Goku goku = new Goku(currlevel,this);
         addObject(goku,422,135);
         
         Buu buu = new Buu(goku);
@@ -65,14 +80,20 @@ public class Level2 extends World implements LevelHandler
         
         //Cell c = new Cell(goku);
         //addObject(c,90,435);
-        oneBall = new One();
-        addObject(oneBall,600,135);
         
+    }
+    
+    private void addBall()
+    {
+        oneBall = whichball.returnBall(currlevel);
+        ballPos = 600;
+        addObject(oneBall,ballPos,135);
     }
     
     
     public void startWorld(){
             Greenfoot.setWorld(this);
+            addBall();
     }
     
     public void startNext(){

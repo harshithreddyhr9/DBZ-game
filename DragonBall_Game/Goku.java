@@ -16,17 +16,18 @@ public class Goku extends Actor
     private int ballscollected;
     private LivesAggregate lifeAgg;
     private LivesIterator lifeIter;
+    public CurrentLevel l;
     public LevelHandler level;
     /**
      * Initialise the Goku
      */
-    public Goku(LevelHandler level)
+    public Goku(CurrentLevel l,LevelHandler level)
     {
         ballscollected = 0;
         lifeAgg = new LivesAggImpl(3);
         lifeIter = lifeAgg.createIterator();// set up lives iterator
-        
         this.level = level;
+        this.l = l;
     }
     
     public void act() 
@@ -52,7 +53,8 @@ public class Goku extends Actor
         if(isTouching(DragonBall.class))
         {
             removeTouching(DragonBall.class);
-            level.startNext();
+            l.incrementNBall();
+            //level.startNext();
         }
     }
     
