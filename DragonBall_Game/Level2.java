@@ -19,7 +19,12 @@ public class Level2 extends World implements LevelHandler
     public CurrentLevel currlevel;
     public WhichBall whichball;
     public DragonBall oneBall;
-    public int ballPos = 600;
+    public int ballPosX;
+    public int ballPosY;
+    public int min_y = 600;
+    public int max_y = 1000;
+    public int min_x = 50;
+    public int max_x = 500;
     
     public int ballsCollected = 0;
     public int ballsNeeded = 7;
@@ -62,9 +67,8 @@ public class Level2 extends World implements LevelHandler
         GreenfootImage bg = getBackground();
         bg.drawImage(bg, position, 0);
         bg.drawImage(bgImage, position + picWidth, 0);
-        
-        ballPos -= (int) scrollSpeed;
-        oneBall.setLocation(ballPos,135);
+        ballPosY -= (int) scrollSpeed;
+        oneBall.setLocation(ballPosY,ballPosX);
     } 
     
     private void prepare()
@@ -86,8 +90,9 @@ public class Level2 extends World implements LevelHandler
     private void addBall()
     {
         oneBall = whichball.returnBall(currlevel);
-        ballPos = 600;
-        addObject(oneBall,ballPos,135);
+        ballPosY = (int)(Math.random()*((max_y-min_y)+1))+min_y;
+        ballPosX = (int)(Math.random()*((max_x-min_x)+1))+min_x;
+        addObject(oneBall,ballPosY,ballPosX);
     }
     
     
