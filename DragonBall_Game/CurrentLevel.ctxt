@@ -1,10 +1,14 @@
 #BlueJ class context
 comment0.target=CurrentLevel
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ CurrentLevel\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ CurrentLevel\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=CurrentLevel()
 comment2.params=
 comment2.target=java.lang.String\ getLevel()
 comment3.params=level
 comment3.target=void\ setLevel(java.lang.String)
-numComments=4
+comment4.params=
+comment4.target=int\ getNBall()
+comment5.params=
+comment5.target=void\ incrementNBall()
+numComments=6
