@@ -17,6 +17,8 @@ public class Menu extends World
    
     LevelHandler level1;
     LevelHandler level2;
+    LevelHandler levelOneSplash;
+    LevelHandler levelTwoSplash;
     LevelHandler wish;
     CurrentLevel l;
     int count=0;
@@ -41,14 +43,18 @@ public class Menu extends World
         
 
         l = new CurrentLevel();
+        levelOneSplash = new LevelOneSplash(l);
         level1 = new Level1(l);
+        levelTwoSplash = new LevelTwoSplash(l);
         level2 = new Level2(l);
         wish = new Wish(l);
         /**
          * Appending levels one after the other using
          * Chain of Responsibilty.
          */
-        level1.setNextLevel(level2);
+        levelOneSplash.setNextLevel(level1);
+        level1.setNextLevel(levelTwoSplash);
+        levelTwoSplash.setNextLevel(level2);
         level2.setNextLevel(wish);
         prepare();
     }
@@ -80,7 +86,7 @@ public class Menu extends World
                 public void performAction()
                 {
                     if(Greenfoot.mouseClicked(buttonPlay)){
-                        level1.startWorld();
+                        levelOneSplash.startWorld();
                     }
                 }
             });
