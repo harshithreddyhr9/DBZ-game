@@ -34,6 +34,8 @@ public class Goku extends Actor
     {
         checkKeyPress();
         lookForBalls();
+        //lookForFire();
+        displayLives();
     }    
     
     public void checkKeyPress()
@@ -65,8 +67,35 @@ public class Goku extends Actor
     public void loseLife(){
         if (!lifeIter.isDone())
         {
-            getWorld().showText("Lives: " + lifeIter.currentItem(), 100, 30);
             lifeIter.next();
+        }
+    }
+    
+    public void lookForFire()
+    {
+        if (isTouching(BuuFire.class))
+        {
+            removeTouching(BuuFire.class);
+            loseLife();
+        }
+        else if (isTouching(CellFire.class))
+        {
+            removeTouching(CellFire.class);
+            loseLife();
+        }
+        else if (isTouching(FriezaFire.class))
+        {
+            removeTouching(FriezaFire.class);
+            loseLife();
+        }
+    }
+    
+    public void displayLives()
+    {
+        getWorld().showText("Lives: " + lifeIter.currentItem(), 100, 30);
+        if (lifeIter.isDone())
+        {
+            Greenfoot.stop();
         }
     }
 }

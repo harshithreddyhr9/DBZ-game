@@ -17,7 +17,7 @@ public class LivesIterImpl implements LivesIterator
     public LivesIterImpl(ArrayList<String> lives)
     {
         livesRemaining = lives;
-        cursor = lives.size();
+        cursor = lives.size() - 1;
     }
 
     /**
