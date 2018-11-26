@@ -1,13 +1,22 @@
 #BlueJ class context
 comment0.target=Level1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ myLevel1\ here.\r\n\ \r\n\ @author\ Rucha\ Apte\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Level1()
-comment1.text=private\ ScoreBoard\ scorekeeper\ \=\ new\ ScoreBoard();\r\n\ \ \ \ private\ ScoreDisplay\ display2;\r\n\ \ \ \ private\ ScoreDisplay\ display3;\r\n\ \ \ \ private\ ScoreDisplay\ display4;\r\n\ \ \ \ private\ int\ counter\ \=\ 0;\r\n\ \ \ \ //private\ int\ totalEnemiesHit\ \=\ 0;\r\n\ \ \ \ //private\ GreenfootImage\ total\ \=\ new\ GreenfootImage("Total\:\ "\ +\ totalEnemiesHit\ +\ "/50",\ 30,\ Color.BLACK,\ transparent);\r\n\ \ \ \ /**\r\n\ Constructor\ for\ objects\ of\ class\ myLevel1.\r\n\ \r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Level1\ here.\n\ \n\ @author\ Sai\ Harshith\n\ @version\ (V\ 1.0\ 11/18/2018)\n
+comment1.params=l
+comment1.target=Level1(CurrentLevel)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=position
-comment3.target=void\ paint(int)
+comment3.params=position\ scrollSpeed
+comment3.target=void\ paint(int,\ double)
 comment4.params=
 comment4.target=void\ prepare()
-numComments=5
+comment5.params=
+comment5.target=void\ addBall()
+comment6.params=
+comment6.target=void\ startWorld()
+comment7.params=NextLevel
+comment7.target=void\ setNextLevel(LevelHandler)
+comment8.params=
+comment8.target=void\ startNext()
+comment9.params=
+comment9.target=Level1\ getLevel()
+numComments=10

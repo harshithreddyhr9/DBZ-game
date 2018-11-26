@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PlayCommand
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ PlayCommand\ here.\r\n\ \r\n\ @author\ Sai\ Harshith\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ PlayCommand\ here.\n\ \n\ @author\ Sai\ Harshith\n\ @version\ (V\ 1.0\ 11/18/2018)\n
 comment1.params=newRec
 comment1.target=void\ setReceiver(Receiver)
 comment2.params=

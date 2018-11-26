@@ -14,6 +14,13 @@ public class Menu extends World
     private PlayCommand playCmd;
     private HelpCommand helpCmd;
     private String bgImageName;
+   
+    LevelHandler level1;
+    LevelHandler level2;
+    LevelHandler wish;
+    CurrentLevel l;
+    int count=0;
+
     /**
      * Constructor for objects of class Menu.
      * 
@@ -22,7 +29,7 @@ public class Menu extends World
     {    
         
         
-        super(1200, 650, 1,false); 
+        super(1200, 675, 1,false); 
         GreenfootImage bg = new GreenfootImage("dbb.jpg");
         bg.scale(getWidth(),getHeight());
         setBackground(bg);
@@ -31,6 +38,18 @@ public class Menu extends World
         buttonHelp = new Help();
         playCmd = new PlayCommand();
         helpCmd = new HelpCommand();
+        
+
+        l = new CurrentLevel();
+        level1 = new Level1(l);
+        level2 = new Level2(l);
+        wish = new Wish(l);
+        /**
+         * Appending levels one after the other using
+         * Chain of Responsibilty.
+         */
+        level1.setNextLevel(level2);
+        level2.setNextLevel(wish);
         prepare();
     }
     
@@ -47,9 +66,13 @@ public class Menu extends World
         
         addObject(buttonPlay, 740,432);
         addObject(buttonHelp, 740,502);
+        
+        
+        
+            
         buttonPlay.setCommand(playCmd);
         buttonHelp.setCommand(helpCmd);
-
+        
         playCmd.setReceiver(
 
             new Receiver()
@@ -57,7 +80,7 @@ public class Menu extends World
                 public void performAction()
                 {
                     if(Greenfoot.mouseClicked(buttonPlay)){
-                        Greenfoot.setWorld(new Level1());
+                        level1.startWorld();
                     }
                 }
             });
@@ -72,8 +95,8 @@ public class Menu extends World
                         addObject(help, getWidth()/2, getHeight()/2);
 
                         addObject(new Back(help),
-                            help.getX() - help.getImage().getWidth()/2,
-                            help.getY() - help.getImage().getHeight()/2);
+                            (help.getX() - help.getImage().getWidth()/2)+15,
+                            (help.getY() - help.getImage().getHeight()/2)+15);
 
                     }
                 }

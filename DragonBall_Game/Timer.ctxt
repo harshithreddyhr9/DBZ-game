@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Timer
+comment0.text=\n\ Write\ a\ description\ of\ class\ timer\ here.\n\ \n\ @author\ (Sai\ Harshith)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ fire()
+comment2.params=
+comment2.target=int\ TimeElapsed()
+numComments=3

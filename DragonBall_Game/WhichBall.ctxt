@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=WhichBall
+comment0.text=\n\ Write\ a\ description\ of\ class\ WhichBall\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=WhichBall()
+comment2.params=l
+comment2.target=DragonBall\ returnBall(CurrentLevel)
+numComments=3
