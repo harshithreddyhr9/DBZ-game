@@ -25,7 +25,7 @@ public class Frieza extends Actor
     {
 
         int diff = this.goku.getY()-this.getY(); 
-        if(diff<5 && diff >-5)
+        if(diff<15 && diff >-15)
         attackGoku();
       
     } 
