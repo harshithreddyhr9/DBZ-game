@@ -14,3 +14,15 @@ Shabari Girish Ganapathy
 1. Implement splash screens before level so that the user can have a pause before starting the next level.
 2. Reducle the rate at which new dragonballs are generated.
 3. Reuse same dragonball if user fails to catch it in first attempt.
+
+**Team Member Name**
+Chungchen Ran
+
+**What I did since last scrum?**
+1. Modified the lives counter with the Iterator Pattern.
+2. Added lives Iterator to project.
+3. Modified background scrolling for proper movement.
+
+**What I am planning to work on next?**
+1. Add faces for lives and implement health.
+2. Add counter for number of balls collected.
