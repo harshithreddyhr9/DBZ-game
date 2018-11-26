@@ -34,12 +34,12 @@ public class Goku extends Actor
     {
         checkKeyPress();
         lookForBalls();
-<<<<<<< HEAD
+
         //lookForFire();
         displayLives();
-=======
+
         InjuredGoku();
->>>>>>> ebc3449681dabaa431ccc3ce28a46db7f88de4bc
+
     }    
     
     public void checkKeyPress()
