@@ -82,8 +82,8 @@ public class Level2 extends World implements LevelHandler
         Frieza f = new Frieza(goku);
         addObject(f,90,235);
         
-        //Cell c = new Cell(goku);
-        //addObject(c,90,435);
+        Cell c = new Cell(goku);
+        addObject(c,90,435);
         
     }
     
