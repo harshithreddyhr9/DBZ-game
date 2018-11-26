@@ -22,8 +22,8 @@ public class Level2 extends World implements LevelHandler
     public DragonBall oneBall;
     public int ballPosX;
     public int ballPosY;
-    public int min_y = 600;
-    public int max_y = 1000;
+    public int min_y = 1250;
+    public int max_y = 1300;
     public int min_x = 50;
     public int max_x = 500;
     
@@ -33,6 +33,7 @@ public class Level2 extends World implements LevelHandler
     public Level2(CurrentLevel l)
     {    
         
+<<<<<<< HEAD
         super(1440, 542, 1, false);
         
         img0 = new Background();    // first background image
@@ -41,6 +42,10 @@ public class Level2 extends World implements LevelHandler
         addObject(img1, getWidth() + getWidth()/2, getHeight()/2);
         
         //setBackground(bgImageName);
+=======
+        super(1240, 542, 1, false);
+        setBackground(bgImageName);
+>>>>>>> 510c9d4708b0433500ec6ff5fd439f1e9213aec8
         whichball = new WhichBall();
         //bgImage = new GreenfootImage(getBackground());
         //bg = new GreenfootImage(picWidth, getHeight());
