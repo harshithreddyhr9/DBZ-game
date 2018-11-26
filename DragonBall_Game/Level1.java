@@ -22,12 +22,12 @@ public class Level1 extends World implements LevelHandler
     public DragonBall oneBall;
     public int ballPosX;
     public int ballPosY;
-    public int min_y = 1250;
-    public int max_y = 1300;
+    public int min_y = 1300;
+    public int max_y = 1350;
     public int min_x = 50;
     public int max_x = 500;
     public int ballsCollected = 0;
-    public int ballsNeeded = 4;
+    public int ballsNeeded = 3;
     
     public Level1(CurrentLevel l)
     {    
@@ -65,6 +65,7 @@ public class Level1 extends World implements LevelHandler
         {
             this.next.startWorld();
         }
+        
         paint(scrollPosition,scrollSpeed);
         
         img0.scroll();  // moves image slowly
@@ -77,6 +78,15 @@ public class Level1 extends World implements LevelHandler
         //bg.drawImage(bg, position, 0);
         //bg.drawImage(bgImage, position + picWidth, 0);
         ballPosY -= (int) scrollSpeed;
+        if(ballPosY <= 0)
+        {
+            addBall();
+        }
+        else
+        {
+            oneBall.setLocation(ballPosY,ballPosX);
+        }
+
         oneBall.setLocation(ballPosY,ballPosX);
     } 
     
