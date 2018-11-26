@@ -34,8 +34,12 @@ public class Goku extends Actor
     {
         checkKeyPress();
         lookForBalls();
+<<<<<<< HEAD
         //lookForFire();
         displayLives();
+=======
+        InjuredGoku();
+>>>>>>> ebc3449681dabaa431ccc3ce28a46db7f88de4bc
     }    
     
     public void checkKeyPress()
@@ -49,7 +53,26 @@ public class Goku extends Actor
                 this.setLocation(this.getX(), this.getY() + 5);
         }
     }
+    public void InjuredGoku()
+    {
+         if(isTouching(BuuFire.class))
+         {         
+            removeTouching(BuuFire.class);
 
+         }
+         if(isTouching(FriezaFire.class))
+         {         
+            removeTouching(FriezaFire.class);
+
+         }
+         if(isTouching(CellFire.class))
+         {         
+            removeTouching(CellFire.class);
+
+         }
+         
+         
+    }
     public void lookForBalls()
     {
         if(isTouching(DragonBall.class))
