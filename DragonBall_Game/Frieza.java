@@ -35,7 +35,7 @@ public class Frieza extends Actor
             FriezaFire ff = new FriezaFire();
             world.addObject(ff, this.getX()+this.getImage().getWidth()/2, this.getY());
             gettime.fire();
-            
+            //Greenfoot.playSound("friezadeathball.wav");   //plays multiple times, causing loud noise
 
     
 }

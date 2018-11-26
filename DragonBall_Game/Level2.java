@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends World implements LevelHandler
 {
-
+    private Background img0, img1;
+    
     private static final String bgImageName = "newbg.png";    
     private static final double scrollSpeed = 7;
     private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
@@ -33,11 +34,17 @@ public class Level2 extends World implements LevelHandler
     {    
         
         super(1440, 542, 1, false);
-        setBackground(bgImageName);
+        
+        img0 = new Background();    // first background image
+        addObject(img0, getWidth()/2, getHeight()/2);   // place middle
+        img1 = new Background();    // second background image
+        addObject(img1, getWidth() + getWidth()/2, getHeight()/2);
+        
+        //setBackground(bgImageName);
         whichball = new WhichBall();
-        bgImage = new GreenfootImage(getBackground());
-        bg = new GreenfootImage(picWidth, getHeight());
-        bg.drawImage(bgImage, 0, 0);
+        //bgImage = new GreenfootImage(getBackground());
+        //bg = new GreenfootImage(picWidth, getHeight());
+        //bg.drawImage(bgImage, 0, 0);
         this.currlevel = l;
         prepare();
     }
@@ -60,13 +67,16 @@ public class Level2 extends World implements LevelHandler
         
         paint(scrollPosition,scrollSpeed);
         
+        img0.scroll();
+        img1.scroll();
+        
     }
   
     private void paint(int position,double scrollSpeed)
     {
-        GreenfootImage bg = getBackground();
-        bg.drawImage(bg, position, 0);
-        bg.drawImage(bgImage, position + picWidth, 0);
+        //GreenfootImage bg = getBackground();
+        //bg.drawImage(bg, position, 0);
+        //bg.drawImage(bgImage, position + picWidth, 0);
         ballPosY -= (int) scrollSpeed;
         oneBall.setLocation(ballPosY,ballPosX);
     } 
