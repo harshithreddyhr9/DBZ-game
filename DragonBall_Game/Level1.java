@@ -77,7 +77,7 @@ public class Level1 extends World implements LevelHandler
         addObject(goku,422,135);
         
         Buu buu = new Buu(goku);
-        addObject(buu, 90,105);
+        addObject(buu, 90,75);
         
         Frieza f = new Frieza(goku);
         addObject(f,90,235);

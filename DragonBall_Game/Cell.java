@@ -21,14 +21,14 @@ public class Cell extends Actor
     public void act() 
     {
         
-        
-        int diff = this.goku.getY()-this.getY(); 
-        if(diff<15 && diff >-15)
+        count ++;
+        //int diff = this.goku.getY()-this.getY(); 
+        if(count%30==0)
         attackGoku();
       
     } 
     public void attackGoku(){
-        //if(gettime.TimeElapsed() > 100){
+        if(gettime.TimeElapsed() > 100){
             World world = getWorld();
             CellFire cf = new CellFire();
             world.addObject(cf, this.getX()+this.getImage().getWidth()/2, this.getY());
@@ -36,6 +36,6 @@ public class Cell extends Actor
             
 
     
-//}
+}
 }
 }
