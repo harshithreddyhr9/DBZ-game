@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Level2
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Level2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Level2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=l
 comment1.target=Level2(CurrentLevel)
 comment2.params=
@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=void\ startNext()
 comment8.params=NextLevel
 comment8.target=void\ setNextLevel(LevelHandler)
-numComments=9
+comment9.params=
+comment9.target=void\ displayLives()
+numComments=10

@@ -1,32 +1,19 @@
-import java.util.ArrayList;
-
 /**
  * Write a description of class LivesAggImpl here.
  * 
  * @author Chungchen Ran
- * @version v0.1 11/22/18
+ * @version v0.2 11/26/18
  */
 public class LivesAggImpl implements LivesAggregate
 {
-    private ArrayList<String> livesRemaining = new ArrayList<String>();
+    private int livesRemaining;
     
     /**
      * Constructor for LivesAggImpl
      */
     public LivesAggImpl(int lives)
     {
-        setLives(lives);
-    }
-
-    /**
-     * Set the number of lives remaining.
-     */
-    public void setLives(int lives)
-    {
-        for (int i = 0; i <= lives; i++)
-        {
-            livesRemaining.add(Integer.toString(i));
-        }
+        livesRemaining = lives;
     }
 
     /**

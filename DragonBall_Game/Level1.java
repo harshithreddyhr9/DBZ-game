@@ -10,6 +10,8 @@ public class Level1 extends World implements LevelHandler
 {
     private Background img0, img1;
     
+    private Life life1, life2, life3;
+    
     private static final String bgImageName = "bg2.png";    
     private static final double scrollSpeed = 5;
     private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
@@ -41,6 +43,13 @@ public class Level1 extends World implements LevelHandler
         img1 = new Background();    // second background image
         addObject(img1, getWidth() + getWidth()/2, getHeight()/2);
         
+        life1 = new Life();
+        addObject(life1, 100, 30);
+        life2 = new Life();
+        addObject(life2, 150, 30);
+        life3 = new Life();
+        addObject(life3, 200, 30);
+        
         //setBackground(bgImageName);
         whichball = new WhichBall();
         //bgImage = new GreenfootImage(getBackground());
@@ -69,6 +78,8 @@ public class Level1 extends World implements LevelHandler
         }
         
         paint(scrollPosition,scrollSpeed);
+        
+        displayLives();
         
         img0.scroll();  // moves image slowly
         img1.scroll();  // moves image slowly
@@ -138,6 +149,25 @@ public class Level1 extends World implements LevelHandler
     public Level1 getLevel()
     {
         return this;
+    }
+    
+    public void displayLives()
+    {
+        showText("Lives:", 40, 30);
+        Goku goku = getObjects(Goku.class).get(0);
+        if (goku.countLives() == 2)
+        {
+            removeObject(life3);
+        }
+        else if (goku.countLives() == 1)
+        {
+            removeObject(life2);
+        }
+        else if (goku.countLives() == 0)
+        {
+            removeObject(life1);
+            Greenfoot.stop();
+        }
     }
 }
     

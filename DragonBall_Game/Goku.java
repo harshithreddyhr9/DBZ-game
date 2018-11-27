@@ -42,9 +42,6 @@ public class Goku extends Actor implements PointsSubject
         checkKeyPress();
         lookForBalls();
 
-        //lookForFire();
-        displayLives();
-
         InjuredGoku();
 
     }    
@@ -103,33 +100,11 @@ public class Goku extends Actor implements PointsSubject
         }
     }
     
-    public void lookForFire()
+    public int countLives()
     {
-        if (isTouching(BuuFire.class))
-        {
-            removeTouching(BuuFire.class);
-            loseLife();
-        }
-        else if (isTouching(CellFire.class))
-        {
-            removeTouching(CellFire.class);
-            loseLife();
-        }
-        else if (isTouching(FriezaFire.class))
-        {
-            removeTouching(FriezaFire.class);
-            loseLife();
-        }
+        return lifeIter.currentItem();
     }
     
-    public void displayLives()
-    {
-        getWorld().showText("Lives: " + lifeIter.currentItem(), 100, 30);
-        if (lifeIter.isDone())
-        {
-            Greenfoot.stop();
-        }
-    }
       public void attach(PointsObserver obj){
         System.out.println("hello");
         System.out.println(obj);
@@ -139,10 +114,10 @@ public class Goku extends Actor implements PointsSubject
     }
     
     public void notifyObservers(){
-        		for (int i=0; i<observers.size(); i++)
-		{
-			PointsObserver observer = observers.get(i) ;
-			observer.updatePoints(ballscollected) ;
-		}
+                for (int i=0; i<observers.size(); i++)
+        {
+            PointsObserver observer = observers.get(i) ;
+            observer.updatePoints(ballscollected) ;
+        }
     }
 }
