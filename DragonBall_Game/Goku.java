@@ -106,11 +106,9 @@ public class Goku extends Actor implements PointsSubject
     }
     
       public void attach(PointsObserver obj){
-        System.out.println("hello");
-        System.out.println(obj);
-        System.out.println(observers);
+        
         observers.add(obj);
-       System.out.println(observers);
+      
     }
     
     public void notifyObservers(){
