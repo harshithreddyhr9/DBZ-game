@@ -105,6 +105,9 @@ public class Level2 extends World implements LevelHandler
         
         Cell c = new Cell(goku);
         addObject(c,90,535);
+        GamePoints gamepoint = new GamePoints();
+        ((PointsSubject)goku).attach(gamepoint);
+        addObject(gamepoint, 296, 27);
         
         user = UserDetails.getInstance();
     }

@@ -1,4 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import lang.stride.*;
+import java.util.*;
+import greenfoot.*;
+import java.awt.Color;
+import java.util.List;
+import java.util.Set; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Goku here.
@@ -6,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Sai Harshith) 
  * @version (V 1.0 11/18/2018)
  */
-public class Goku extends Actor
+public class Goku extends Actor implements PointsSubject
 
 {
     /**
@@ -18,12 +23,14 @@ public class Goku extends Actor
     private LivesIterator lifeIter;
     public CurrentLevel l;
     public LevelHandler level;
+    private ArrayList<PointsObserver> observers ;
     /**
      * Initialise the Goku
      */
     public Goku(CurrentLevel l,LevelHandler level)
     {
         ballscollected = 0;
+        observers = new ArrayList<PointsObserver>();
         lifeAgg = new LivesAggImpl(3);
         lifeIter = lifeAgg.createIterator();// set up lives iterator
         this.level = level;
@@ -79,6 +86,8 @@ public class Goku extends Actor
         {
             removeTouching(DragonBall.class);
             l.incrementNBall();
+            ballscollected = ballscollected+1;
+            notifyObservers();
             //level.startNext();
         }
     }
@@ -120,5 +129,20 @@ public class Goku extends Actor
         {
             Greenfoot.stop();
         }
+    }
+      public void attach(PointsObserver obj){
+        System.out.println("hello");
+        System.out.println(obj);
+        System.out.println(observers);
+        observers.add(obj);
+       System.out.println(observers);
+    }
+    
+    public void notifyObservers(){
+        		for (int i=0; i<observers.size(); i++)
+		{
+			PointsObserver observer = observers.get(i) ;
+			observer.updatePoints(ballscollected) ;
+		}
     }
 }
