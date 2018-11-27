@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=LivesAggImpl
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ LivesAggImpl\ here.\r\n\ \r\n\ @author\ Chungchen\ Ran\r\n\ @version\ v0.1\ 11/22/18\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ LivesAggImpl\ here.\n\ \n\ @author\ Chungchen\ Ran\n\ @version\ v0.1\ 11/22/18\n
 comment1.params=lives
 comment1.target=LivesAggImpl(int)
-comment1.text=\r\n\ Constructor\ for\ LivesAggImpl\r\n
+comment1.text=\n\ Constructor\ for\ LivesAggImpl\n
 comment2.params=lives
 comment2.target=void\ setLives(int)
-comment2.text=\r\n\ Set\ the\ number\ of\ lives\ remaining.\r\n
+comment2.text=\n\ Set\ the\ number\ of\ lives\ remaining.\n
 comment3.params=
 comment3.target=LivesIterator\ createIterator()
-comment3.text=\r\n\ Return\ the\ lives\ Iterator\ with\ the\ number\ of\ lives\ remaining.\r\n
+comment3.text=\n\ Return\ the\ lives\ Iterator\ with\ the\ number\ of\ lives\ remaining.\n
 numComments=4

@@ -29,6 +29,8 @@ public class Level1 extends World implements LevelHandler
     public int ballsCollected = 0;
     public int ballsNeeded = 3;
     
+    public UserDetails user;
+    
     public Level1(CurrentLevel l)
     {    
         
@@ -104,7 +106,8 @@ public class Level1 extends World implements LevelHandler
         Cell c = new Cell(goku);
         addObject(c,90,535);
         
-       
+        user = UserDetails.getInstance();
+        user.setT1();
     }
     
     private void addBall()

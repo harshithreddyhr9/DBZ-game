@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HelpCommand
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ HelpCommand\ here.\r\n\ \r\n\ @author\ Sai\ Harshith\ \r\n\ @version\ (V\ 1.0\ 11/18/2018)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ HelpCommand\ here.\n\ \n\ @author\ Sai\ Harshith\ \n\ @version\ (V\ 1.0\ 11/18/2018)\n
 comment1.params=newReceiver
 comment1.target=void\ setReceiver(Receiver)
 comment2.params=

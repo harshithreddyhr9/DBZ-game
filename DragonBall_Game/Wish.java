@@ -46,7 +46,8 @@ public class Wish extends World implements LevelHandler
             removeObject(gp);
         if(count == 115)
             addObject(p, 750,550);
-            
+        if(count == 140)
+            startNext();
     }
   
     private void prepare()
@@ -68,7 +69,7 @@ public class Wish extends World implements LevelHandler
     }
     
     public void startNext(){
-        //do nothing here
+        this.next.startWorld();
     }
     
     public Wish getLevel(){

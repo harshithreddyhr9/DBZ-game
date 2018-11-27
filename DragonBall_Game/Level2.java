@@ -27,6 +27,8 @@ public class Level2 extends World implements LevelHandler
     public int min_x = 50;
     public int max_x = 500;
     
+    public UserDetails user;
+    
     public int ballsCollected = 0;
     public int ballsNeeded = 7;
     
@@ -63,6 +65,7 @@ public class Level2 extends World implements LevelHandler
         if(currlevel.getNBall() == ballsNeeded)
         {
             this.next.startWorld();
+            user.setT2();
         }
         
         paint(scrollPosition,scrollSpeed);
@@ -103,6 +106,7 @@ public class Level2 extends World implements LevelHandler
         Cell c = new Cell(goku);
         addObject(c,90,535);
         
+        user = UserDetails.getInstance();
     }
     
     private void addBall()
