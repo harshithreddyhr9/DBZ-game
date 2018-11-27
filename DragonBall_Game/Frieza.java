@@ -23,14 +23,13 @@ public class Frieza extends Actor
     }
     public void act() 
     {
-        count++;
-        //int diff = this.goku.getY()-this.getY(); 
-        if(count%20==0)
+        int diff = this.goku.getY()-this.getY(); 
+        if(-100<diff && diff<100)
         attackGoku();
       
     } 
     public void attackGoku(){
-        if(gettime.TimeElapsed() > 100){
+        if(gettime.TimeElapsed() > 1000){
             World world = getWorld();
             FriezaFire ff = new FriezaFire();
             world.addObject(ff, this.getX()+this.getImage().getWidth()/2, this.getY());

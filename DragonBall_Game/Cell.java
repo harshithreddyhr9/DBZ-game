@@ -22,13 +22,13 @@ public class Cell extends Actor
     {
         
         count ++;
-        //int diff = this.goku.getY()-this.getY(); 
-        if(count%30==0)
+        int diff = this.goku.getY()-this.getY(); 
+        if(-100<diff && diff<100)
         attackGoku();
       
     } 
     public void attackGoku(){
-        if(gettime.TimeElapsed() > 100){
+        if(gettime.TimeElapsed() > 950){
             World world = getWorld();
             CellFire cf = new CellFire();
             world.addObject(cf, this.getX()+this.getImage().getWidth()/2, this.getY());

@@ -32,7 +32,7 @@ public class Level1 extends World implements LevelHandler
     public Level1(CurrentLevel l)
     {    
         
-        super(1240, 542, 1, false);
+        super(1240, 640, 1, false);
         
         img0 = new Background();    // first background image
         addObject(img0, getWidth()/2, getHeight()/2);   // place middle
@@ -93,16 +93,16 @@ public class Level1 extends World implements LevelHandler
     private void prepare()
     {   
         Goku goku = new Goku(currlevel,this);
-        addObject(goku,422,135);
+        addObject(goku,450,155);
         
         Buu buu = new Buu(goku);
-        addObject(buu, 90,75);
+        addObject(buu, 90,135);
         
         Frieza f = new Frieza(goku);
-        addObject(f,90,235);
+        addObject(f,90,335);
         
         Cell c = new Cell(goku);
-        addObject(c,90,435);
+        addObject(c,90,535);
         
        
     }
