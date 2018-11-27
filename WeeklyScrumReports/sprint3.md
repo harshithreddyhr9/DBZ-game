@@ -26,3 +26,17 @@ Chungchen Ran
 **What I am planning to work on next?**
 1. Add faces for lives and implement health.
 2. Add counter for number of balls collected.
+
+**Team Member Name**  
+Sai Harshith Reddy Gaddam  
+
+**What I did since last scrum?**
+1. Add powers to villains
+2. Class diagram of the command pattern implementation 
+3. Added a new world ( Changes need to be made)  
+
+**What I am planning to work on next?**  
+1. Make changes to the Help Screen
+2. Test the gameplay 
+3. Make changes to the shenron world
+4. Make changes to the pause screen between levels
