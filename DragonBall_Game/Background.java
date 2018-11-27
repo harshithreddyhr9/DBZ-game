@@ -21,8 +21,8 @@ public class Background extends Actor
     {
         if (getX() < -getImage().getWidth()/2)  // move leftmost image to right side
         {
-            setLocation(getWorld().getWidth() + getImage().getWidth(), getY());
+            setLocation(getX() + getWorld().getWidth()*2, getY());
         }
-        setLocation(getX()-5, getY());
+        setLocation(getX()-10, getY());
     }
 }

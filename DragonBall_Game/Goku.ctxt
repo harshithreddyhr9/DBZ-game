@@ -13,16 +13,9 @@ comment4.target=void\ InjuredGoku()
 comment5.params=
 comment5.target=void\ lookForBalls()
 comment6.params=
-<<<<<<< HEAD
-comment6.target=void\ loseLife()
-comment7.params=
-comment7.target=void\ lookForFire()
-comment8.params=
-comment8.target=void\ displayLives()
-numComments=9
-=======
 comment6.target=Goku\ getGokuObject()
 comment7.params=
 comment7.target=void\ loseLife()
-numComments=8
->>>>>>> ebc3449681dabaa431ccc3ce28a46db7f88de4bc
+comment8.params=
+comment8.target=int\ countLives()
+numComments=9

@@ -34,12 +34,8 @@ public class Goku extends Actor
     {
         checkKeyPress();
         lookForBalls();
-<<<<<<< HEAD
-        //lookForFire();
-        displayLives();
-=======
+
         InjuredGoku();
->>>>>>> ebc3449681dabaa431ccc3ce28a46db7f88de4bc
     }    
     
     public void checkKeyPress()
@@ -58,17 +54,17 @@ public class Goku extends Actor
          if(isTouching(BuuFire.class))
          {         
             removeTouching(BuuFire.class);
-
+            
          }
          if(isTouching(FriezaFire.class))
          {         
             removeTouching(FriezaFire.class);
-
+            
          }
          if(isTouching(CellFire.class))
          {         
             removeTouching(CellFire.class);
-
+            
          }
          
          
@@ -94,31 +90,8 @@ public class Goku extends Actor
         }
     }
     
-    public void lookForFire()
+    public int countLives()
     {
-        if (isTouching(BuuFire.class))
-        {
-            removeTouching(BuuFire.class);
-            loseLife();
-        }
-        else if (isTouching(CellFire.class))
-        {
-            removeTouching(CellFire.class);
-            loseLife();
-        }
-        else if (isTouching(FriezaFire.class))
-        {
-            removeTouching(FriezaFire.class);
-            loseLife();
-        }
-    }
-    
-    public void displayLives()
-    {
-        getWorld().showText("Lives: " + lifeIter.currentItem(), 100, 30);
-        if (lifeIter.isDone())
-        {
-            Greenfoot.stop();
-        }
+        return lifeIter.currentItem();
     }
 }

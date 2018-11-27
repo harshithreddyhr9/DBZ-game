@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=LevelTwoSplash
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ LevelTwoSplash\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=l
+comment1.target=LevelTwoSplash(CurrentLevel)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ startWorld()
+comment4.params=NextLevel
+comment4.target=void\ setNextLevel(LevelHandler)
+comment5.params=
+comment5.target=void\ startNext()
+numComments=6

@@ -1,51 +1,35 @@
-import java.util.ArrayList;
-
 /**
  * Write a description of class LivesIterImpl here.
  * 
  * @author Chungchen Ran
- * @version v0.1 11/22/18
+ * @version v0.2 11/26/18
  */
 public class LivesIterImpl implements LivesIterator
 {
-    private ArrayList<String> livesRemaining;
-    private int cursor;
+    private int livesRemaining;
 
     /**
      * Constructor for objects of class LivesIterImpl
      */
-    public LivesIterImpl(ArrayList<String> lives)
+    public LivesIterImpl(int lives)
     {
         livesRemaining = lives;
-        cursor = lives.size() - 1;
-    }
-
-    /**
-     * Return the first number.
-     */
-    public String first()
-    {
-        return livesRemaining.get(livesRemaining.size());
     }
     
     /**
-     * Return the next number.
+     * Go to the next number.
      */
-    public String next()
+    public void next()
     {
-        cursor--;
-        if (!isDone())
-            return livesRemaining.get(cursor);
-        else
-            return "<end>";
+        livesRemaining--;
     }
     
     /**
      * Return the current number.
      */
-    public String currentItem()
+    public int currentItem()
     {
-        return livesRemaining.get(cursor);
+        return livesRemaining;
     }
     
     /**
@@ -53,6 +37,6 @@ public class LivesIterImpl implements LivesIterator
      */
     public boolean isDone()
     {
-        return (cursor == 0);
+        return (livesRemaining == 0);
     }
 }

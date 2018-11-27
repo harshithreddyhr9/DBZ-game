@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=void\ startNext()
 comment8.params=NextLevel
 comment8.target=void\ setNextLevel(LevelHandler)
-numComments=9
+comment9.params=
+comment9.target=void\ displayLives()
+numComments=10

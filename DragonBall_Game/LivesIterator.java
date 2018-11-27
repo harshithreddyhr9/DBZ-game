@@ -3,12 +3,11 @@ import greenfoot.*;
  * Write a description of class LivesIterator here.
  * 
  * @author Chungchen Ran
- * @version v0.1 11/21/18
+ * @version v0.2 11/26/18
  */
 public interface LivesIterator
 {
-    String first();
-    String next();
+    void next();
     boolean isDone();
-    String currentItem();
+    int currentItem();
 }

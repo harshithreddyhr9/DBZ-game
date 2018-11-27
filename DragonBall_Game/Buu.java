@@ -22,15 +22,15 @@ public class Buu extends Actor
     }
     public void act() 
     {
-        count ++;
-        //int diff = this.goku.getY()-this.getY(); 
-        if(count%25==0)
+        
+        int diff = this.goku.getY()-this.getY(); 
+        if(-75<diff && diff<75)
         attackGoku();
       
     }
     
     public void attackGoku(){
-        if(gettime.TimeElapsed() > 100){
+        if(gettime.TimeElapsed() > 800){
             World world = getWorld();
             BuuFire bf = new BuuFire();
             world.addObject(bf, this.getX()+this.getImage().getWidth()/2, this.getY());

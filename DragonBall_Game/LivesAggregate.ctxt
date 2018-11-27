@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=LivesAggregate
-comment0.text=\n\ Write\ a\ description\ of\ class\ LivesAggregate\ here.\n\ \n\ @author\ Chungchen\ Ran\n\ @version\ v0.2\ 11/22/18\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ LivesAggregate\ here.\n\ \n\ @author\ Chungchen\ Ran\n\ @version\ v0.3\ 11/26/18\n
 comment1.params=
 comment1.target=LivesIterator\ createIterator()
-comment2.params=lives
-comment2.target=void\ setLives(int)
-numComments=3
+numComments=2

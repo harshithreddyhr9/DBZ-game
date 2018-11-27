@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=LivesIterator
-comment0.text=\n\ Write\ a\ description\ of\ class\ LivesIterator\ here.\n\ \n\ @author\ Chungchen\ Ran\n\ @version\ v0.1\ 11/21/18\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ LivesIterator\ here.\n\ \n\ @author\ Chungchen\ Ran\n\ @version\ v0.2\ 11/26/18\n
 comment1.params=
-comment1.target=java.lang.String\ first()
+comment1.target=void\ next()
 comment2.params=
-comment2.target=java.lang.String\ next()
+comment2.target=boolean\ isDone()
 comment3.params=
-comment3.target=boolean\ isDone()
-comment4.params=
-comment4.target=java.lang.String\ currentItem()
-numComments=5
+comment3.target=int\ currentItem()
+numComments=4
