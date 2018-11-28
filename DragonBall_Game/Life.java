@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 11/26/18
  */
 public class Life extends Actor
-{    
+{
     /**
      * Act - do whatever the Life wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,6 +16,4 @@ public class Life extends Actor
     {
         // Add your action code here.
     }    
-    
-    
 }

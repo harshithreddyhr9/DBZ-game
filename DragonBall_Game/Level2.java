@@ -10,6 +10,8 @@ public class Level2 extends World implements LevelHandler
 {
     private Background img0, img1;
     
+    private CurrentHealth currHealth;
+    private HealthBar hbar;
     private Life life1, life2, life3;
     
     private static final String bgImageName = "newbg.png";    
@@ -29,6 +31,8 @@ public class Level2 extends World implements LevelHandler
     public int min_x = 50;
     public int max_x = 500;
     
+    public UserDetails user;
+    
     public int ballsCollected = 0;
     public int ballsNeeded = 7;
     
@@ -41,12 +45,15 @@ public class Level2 extends World implements LevelHandler
         img1 = new Background();    // second background image
         addObject(img1, getWidth() + getWidth()/2, getHeight()/2);
         
-        life1 = new Life();
-        addObject(life1, 150, 30);
+        currHealth = new CurrentHealth();
+        hbar = currHealth.getCurrentHealth(0);  // health bar, num of hits 0
+        addObject(hbar, 500, 30);
+        life1 = new Life();         // life counter
+        addObject(life1, 100, 30);
         life2 = new Life();
-        addObject(life2, 200, 30);
+        addObject(life2, 150, 30);
         life3 = new Life();
-        addObject(life3, 250, 30);
+        addObject(life3, 200, 30);
         
         //setBackground(bgImageName);
         setBackground(bgImageName);
@@ -72,14 +79,17 @@ public class Level2 extends World implements LevelHandler
         if(currlevel.getNBall() == ballsNeeded)
         {
             this.next.startWorld();
+            user.setT2();
         }
         
         paint(scrollPosition,scrollSpeed);
         
+        displayHealthBar();
         displayLives();
         
         img0.scroll();
         img1.scroll();
+        
     }
   
     private void paint(int position,double scrollSpeed)
@@ -112,7 +122,11 @@ public class Level2 extends World implements LevelHandler
         
         Cell c = new Cell(goku);
         addObject(c,90,535);
+        GamePoints gamepoint = new GamePoints();
+        ((PointsSubject)goku).attach(gamepoint);
+        addObject(gamepoint, 296, 27);
         
+        user = UserDetails.getInstance();
     }
     
     private void addBall()
@@ -139,7 +153,7 @@ public class Level2 extends World implements LevelHandler
     
     public void displayLives()
     {
-        showText("Lives:", 90, 30);
+        showText("Lives:", 40, 30);
         Goku goku = getObjects(Goku.class).get(0);
         if (goku.countLives() == 2)
         {
@@ -153,6 +167,25 @@ public class Level2 extends World implements LevelHandler
         {
             removeObject(life1);
             Greenfoot.stop();
+        }
+    }
+    
+    public void displayHealthBar()
+    {
+        Goku goku = getObjects(Goku.class).get(0);
+        removeObject(hbar);
+        hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
+        addObject(hbar, 500, 30);
+        if (goku.getNumOfHits() == 4)
+        {
+            goku.loseLife();
+            goku.resetHitCount();
+            if (goku.countLives() > 0)
+            {
+                removeObject(hbar);
+                hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
+                addObject(hbar, 500, 30);
+            }
         }
     }
 }

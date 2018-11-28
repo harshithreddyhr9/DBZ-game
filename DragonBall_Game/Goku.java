@@ -1,4 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import lang.stride.*;
+import java.util.*;
+import greenfoot.*;
+import java.awt.Color;
+import java.util.List;
+import java.util.Set; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Goku here.
@@ -6,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Sai Harshith) 
  * @version (V 1.0 11/18/2018)
  */
-public class Goku extends Actor
+public class Goku extends Actor implements PointsSubject
 
 {
     /**
@@ -14,16 +19,20 @@ public class Goku extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int ballscollected;
+    private int numOfHits;  // number of hits taken
     private LivesAggregate lifeAgg;
     private LivesIterator lifeIter;
     public CurrentLevel l;
     public LevelHandler level;
+    private ArrayList<PointsObserver> observers ;
     /**
      * Initialise the Goku
      */
     public Goku(CurrentLevel l,LevelHandler level)
     {
         ballscollected = 0;
+        numOfHits = 0;          // have not been hit yet
+        observers = new ArrayList<PointsObserver>();
         lifeAgg = new LivesAggImpl(3);
         lifeIter = lifeAgg.createIterator();// set up lives iterator
         this.level = level;
@@ -36,6 +45,7 @@ public class Goku extends Actor
         lookForBalls();
 
         InjuredGoku();
+
     }    
     
     public void checkKeyPress()
@@ -54,17 +64,17 @@ public class Goku extends Actor
          if(isTouching(BuuFire.class))
          {         
             removeTouching(BuuFire.class);
-            
+            numOfHits++;    // increment every hit
          }
          if(isTouching(FriezaFire.class))
          {         
             removeTouching(FriezaFire.class);
-            
+            numOfHits++;    // increment every hit
          }
          if(isTouching(CellFire.class))
          {         
             removeTouching(CellFire.class);
-            
+            numOfHits++;    // increment every hit
          }
          
          
@@ -75,6 +85,8 @@ public class Goku extends Actor
         {
             removeTouching(DragonBall.class);
             l.incrementNBall();
+            ballscollected = ballscollected+1;
+            notifyObservers();
             //level.startNext();
         }
     }
@@ -93,5 +105,29 @@ public class Goku extends Actor
     public int countLives()
     {
         return lifeIter.currentItem();
+    }
+    
+    public int getNumOfHits()       // return the num of hits sustained
+    {
+        return numOfHits;
+    }
+    
+    public void resetHitCount()     // reset hit counter when life is lost
+    {
+        numOfHits = 0;
+    }
+    
+      public void attach(PointsObserver obj){
+        
+        observers.add(obj);
+      
+    }
+    
+    public void notifyObservers(){
+                for (int i=0; i<observers.size(); i++)
+        {
+            PointsObserver observer = observers.get(i) ;
+            observer.updatePoints(ballscollected) ;
+        }
     }
 }
