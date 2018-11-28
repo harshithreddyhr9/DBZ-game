@@ -5,12 +5,16 @@ import sys
 
 app = Flask(__name__)
 api = Api(app)
-board = {'foo' : 20,'bar': 30,"john": 26,"harshith": 28}
+board = {'foo' : 20,'bar': 30,"joh": 26,"har": 28}
 
 class Game(Resource):
 
 	def get(self):
-		return Response(response=json.dumps(board),status=200)
+		data = ""
+		for key in board:
+			data += '{:8s}:{:2s}s;'.format(key, str(board[key]))
+			#data += key+" : "+str(board[key])+"s;"
+		return Response(response=data,status=200)
 
 	def post(self):
 		user_name = request.json['username']

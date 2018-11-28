@@ -112,7 +112,7 @@ public class Level2 extends World implements LevelHandler
     private void prepare()
     {   
         Goku goku = new Goku(currlevel,this);
-        addObject(goku,422,155);
+        addObject(goku,422,200);
         
         Buu buu = new Buu(goku);
         addObject(buu, 90,135);

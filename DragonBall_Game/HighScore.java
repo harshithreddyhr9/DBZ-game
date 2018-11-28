@@ -29,7 +29,7 @@ public class HighScore extends World implements LevelHandler
     {
        user = UserDetails.getInstance();
        String name = user.getUserName();
-       addObject(new DisplayHighScore(name+" : "+user.getScore()),400,200); 
+       addObject(new DisplayHighScore(name+" : "+user.getScore()),600,300); 
     }
     
     public void startWorld()

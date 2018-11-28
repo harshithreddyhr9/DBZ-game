@@ -28,13 +28,20 @@
         
         public void prepare()
         {
-            GreenfootImage img = new GreenfootImage(800, 400);
+            GreenfootImage img = new GreenfootImage(300, 300);
             img.setColor(new Color(0,0,0,0));
             img.fill();
             img.setColor(Color.WHITE);
             img.setFont(new Font("OptimusPrinceps", false, false , 25));
-            img.drawString(this.username, 35, 35);
-            img.drawString(this.scoreboard,225,35);
+            img.drawString(this.username, 35, 50);
+            
+            String arr[] = this.scoreboard.split(";");
+            int y = 100;
+            for(String s : arr){
+                img.drawString(s,35,y);
+                y += 35;
+                //System.out.println(s);
+            }
             setImage(img);
         }
     
