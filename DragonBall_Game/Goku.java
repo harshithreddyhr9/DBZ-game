@@ -19,6 +19,7 @@ public class Goku extends Actor implements PointsSubject
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int ballscollected;
+    private int numOfHits;  // number of hits taken
     private LivesAggregate lifeAgg;
     private LivesIterator lifeIter;
     public CurrentLevel l;
@@ -30,6 +31,7 @@ public class Goku extends Actor implements PointsSubject
     public Goku(CurrentLevel l,LevelHandler level)
     {
         ballscollected = 0;
+        numOfHits = 0;          // have not been hit yet
         observers = new ArrayList<PointsObserver>();
         lifeAgg = new LivesAggImpl(3);
         lifeIter = lifeAgg.createIterator();// set up lives iterator
@@ -62,17 +64,17 @@ public class Goku extends Actor implements PointsSubject
          if(isTouching(BuuFire.class))
          {         
             removeTouching(BuuFire.class);
-
+            numOfHits++;    // increment every hit
          }
          if(isTouching(FriezaFire.class))
          {         
             removeTouching(FriezaFire.class);
-
+            numOfHits++;    // increment every hit
          }
          if(isTouching(CellFire.class))
          {         
             removeTouching(CellFire.class);
-
+            numOfHits++;    // increment every hit
          }
          
          
@@ -103,6 +105,16 @@ public class Goku extends Actor implements PointsSubject
     public int countLives()
     {
         return lifeIter.currentItem();
+    }
+    
+    public int getNumOfHits()       // return the num of hits sustained
+    {
+        return numOfHits;
+    }
+    
+    public void resetHitCount()     // reset hit counter when life is lost
+    {
+        numOfHits = 0;
     }
     
       public void attach(PointsObserver obj){

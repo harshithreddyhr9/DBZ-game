@@ -10,6 +10,8 @@ public class Level1 extends World implements LevelHandler
 {
     private Background img0, img1;
     
+    private CurrentHealth currHealth;
+    private HealthBar hbar;
     private Life life1, life2, life3;
     
     private static final String bgImageName = "bg2.png";    
@@ -43,7 +45,10 @@ public class Level1 extends World implements LevelHandler
         img1 = new Background();    // second background image
         addObject(img1, getWidth() + getWidth()/2, getHeight()/2);
         
-        life1 = new Life();
+        currHealth = new CurrentHealth();
+        hbar = currHealth.getCurrentHealth(0);  // health bar, num of hits 0
+        addObject(hbar, 500, 30);
+        life1 = new Life();         // life counter
         addObject(life1, 100, 30);
         life2 = new Life();
         addObject(life2, 150, 30);
@@ -79,6 +84,7 @@ public class Level1 extends World implements LevelHandler
         
         paint(scrollPosition,scrollSpeed);
         
+        displayHealthBar();
         displayLives();
         
         img0.scroll();  // moves image slowly
@@ -167,6 +173,25 @@ public class Level1 extends World implements LevelHandler
         {
             removeObject(life1);
             Greenfoot.stop();
+        }
+    }
+    
+    public void displayHealthBar()
+    {
+        Goku goku = getObjects(Goku.class).get(0);
+        removeObject(hbar);
+        hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
+        addObject(hbar, 500, 30);
+        if (goku.getNumOfHits() == 4)
+        {
+            goku.loseLife();
+            goku.resetHitCount();
+            if (goku.countLives() > 0)
+            {
+                removeObject(hbar);
+                hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
+                addObject(hbar, 500, 30);
+            }
         }
     }
 }
