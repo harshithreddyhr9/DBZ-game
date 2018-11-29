@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.net.*;
 import java.io.*;
+import java.util.*;
+import java.nio.charset.StandardCharsets;
 /**
  * Write a description of class HighScore here.
  * 
@@ -29,7 +31,40 @@ public class HighScore extends World implements LevelHandler
     {
        user = UserDetails.getInstance();
        String name = user.getUserName();
-       addObject(new DisplayHighScore(name+" : "+user.getScore()),600,300); 
+       String score = user.getScore();
+       try{
+           sendData(name,score.replace("s",""));
+       }catch(Exception e){
+           //do nothing
+       }
+       addObject(new DisplayHighScore(user.getUserName(),0),600,300);
+       addObject(new DisplayHighScore(user.getScore(),1),800,300);
+    }
+    
+    
+    public void sendData(String username,String score) throws Exception
+    {
+       StringBuffer buf = new StringBuffer();
+       buf.append("{\"username\":\"");buf.append(username);buf.append("\",");
+       buf.append("\"score\":\"");buf.append(score);buf.append("\"}");
+       String json_str = buf.toString();
+       
+       URL url = new URL("http://18.216.182.74:5000/scoreboard");
+       URLConnection con = url.openConnection();
+       HttpURLConnection http = (HttpURLConnection)con;
+       http.setRequestMethod("POST"); // PUT is another valid option
+       http.setDoOutput(true);
+       
+       byte[] out = json_str.getBytes(StandardCharsets.UTF_8);
+       int length = out.length;
+		
+       http.setFixedLengthStreamingMode(length);
+       http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+       http.connect();
+       
+       OutputStream os = http.getOutputStream();
+       os.write(out);
+       os.close();
     }
     
     public void startWorld()

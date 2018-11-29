@@ -10,44 +10,49 @@
     public class DisplayHighScore extends Actor
     {
     
-        public String username;
+        public String text;
         public String scoreboard;
-        public DisplayHighScore(String username)
+        public DisplayHighScore(String text,int index)
         {
-            this.username = username;
-            
+            this.text = text;
             try{
                 this.scoreboard = getScoreBoard();
             }catch(Exception E){
                 //do nothing
             }
             finally{
-                prepare();
+                prepare(index);
             }
         }
         
-        public void prepare()
+        public void prepare(int index)
         {
             GreenfootImage img = new GreenfootImage(300, 300);
+            
             img.setColor(new Color(0,0,0,0));
             img.fill();
             img.setColor(Color.WHITE);
             img.setFont(new Font("OptimusPrinceps", false, false , 25));
-            img.drawString(this.username, 35, 50);
             
-            String arr[] = this.scoreboard.split(";");
-            int y = 100;
-            for(String s : arr){
-                img.drawString(s,35,y);
-                y += 35;
-                //System.out.println(s);
+            img.drawString(text, 35, 50);
+            if(!this.scoreboard.equals("No Connection")){  
+                String arr[] = this.scoreboard.split(";");
+                int y = 100;
+                for(String s : arr){
+                    String temp[] = s.split(":");
+                    img.drawString(temp[index],35,y);
+                    y += 35;
+                    //System.out.println(s);
+                }
+            }else{
+                img.drawString(this.scoreboard,35,100);
             }
             setImage(img);
         }
     
         public String getScoreBoard() throws Exception
         {
-         URL url = new URL("http://127.0.0.1:5000/scoreboard");
+         URL url = new URL("http://18.216.182.74:5000/scoreboard");
          String line = "";
          BufferedReader reader = null;
          try {

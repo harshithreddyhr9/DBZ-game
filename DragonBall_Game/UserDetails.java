@@ -47,6 +47,6 @@ public class UserDetails
     
     public static String getScore()
     {
-        return Double.toString((t2-t1)/1000)+"s";
+        return Integer.toString((int)(t2-t1)/1000)+"s";
     }
 }

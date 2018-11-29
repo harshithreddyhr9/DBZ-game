@@ -18,8 +18,9 @@ class Game(Resource):
 
 	def post(self):
 		user_name = request.json['username']
-		score = request.json['score']
+		score = int(request.json['score'])
 		board[user_name] = score
+		#print('done')
 		return Response(status=201)
 
 api.add_resource(Game,"/scoreboard")
