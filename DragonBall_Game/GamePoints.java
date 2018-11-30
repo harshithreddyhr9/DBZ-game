@@ -16,7 +16,7 @@ public class GamePoints extends Actor implements PointsObserver
         
     }
     
-    public void updatePoints(int points){
+    public void updatePoints(int points, int hits){
      getWorld().showText("Balls: " + points, 296, 27);   
 }
 }

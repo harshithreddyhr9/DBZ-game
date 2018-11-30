@@ -12,6 +12,6 @@
  */
 public interface PointsObserver  
 {
-    void updatePoints(int points);
+    void updatePoints(int points, int hits);
 }
 
