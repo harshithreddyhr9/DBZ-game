@@ -40,3 +40,16 @@ Sai Harshith Reddy Gaddam
 2. Test the gameplay 
 3. Make changes to the shenron world
 4. Make changes to the pause screen between levels
+
+
+**Team Member Name**  
+Saumya Goyal 
+
+**What I did since last scrum?**
+1. Added observer pattern to the modified gameplay
+2. Draw class diagram of the observer pattern implemented
+
+**What I am planning to work on next?**
+1. Implement Observer Pattern fot the health bar system
+2. Draw class diagram of the health bar system
+3. Re-edit the images in the game
