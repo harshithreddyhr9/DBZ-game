@@ -56,10 +56,11 @@
         {
             Arrays.sort(arr, new Comparator<String>() {
                 public int compare(String str1, String str2) {
-                    String substr1 = str1.substring(str1.length()-3,str1.length()-1);
-                    String substr2 = str2.substring(str1.length()-3,str1.length()-1);
-            
-                    return -(Integer.valueOf(substr2).compareTo(Integer.valueOf(substr1)));
+                    //String substr1 = str1.substring(str1.length()-3,str1.length()-1);
+                    //String substr2 = str2.substring(str1.length()-3,str1.length()-1);
+                    String substr1[] = str1.split(":");
+                    String substr2[] = str2.split(":");
+                    return -(Integer.valueOf(substr2[1].replace("s","")).compareTo(Integer.valueOf(substr1[1].replace("s",""))));
                 }
             });
 
