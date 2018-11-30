@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=LevelOneSplash
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ LevelOneSplash\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ LevelOneSplash\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=l
 comment1.target=LevelOneSplash(CurrentLevel)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ startWorld()
+comment3.params=li
+comment3.target=void\ startWorld(LivesIterator)
 comment4.params=NextLevel
 comment4.target=void\ setNextLevel(LevelHandler)
 comment5.params=

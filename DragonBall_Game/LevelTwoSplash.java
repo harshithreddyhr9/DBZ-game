@@ -11,6 +11,7 @@ public class LevelTwoSplash extends World implements LevelHandler
     
     private static final String bgImageName = "levelTwoSplash.png"; 
     public LevelHandler next;
+    private LivesIterator lifeIter;
     
     public LevelTwoSplash(CurrentLevel l)
     {    
@@ -24,9 +25,10 @@ public class LevelTwoSplash extends World implements LevelHandler
             startNext();
     }
     
-    public void startWorld()
+    public void startWorld(LivesIterator li)
     {
         Greenfoot.setWorld(this);
+        lifeIter = li;
     }
     
     public void setNextLevel(LevelHandler NextLevel)
@@ -35,7 +37,7 @@ public class LevelTwoSplash extends World implements LevelHandler
     }
     
     public void startNext(){
-        this.next.startWorld();
+        this.next.startWorld(lifeIter);
     }
     
 }

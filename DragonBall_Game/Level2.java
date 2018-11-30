@@ -12,6 +12,7 @@ public class Level2 extends World implements LevelHandler
     
     //private CurrentHealth currHealth;
     private HealthBar hbar;
+    private LivesIterator lifeIter;
     private Life life1, life2, life3;
     
     private static final String bgImageName = "newbg.png";    
@@ -79,7 +80,7 @@ public class Level2 extends World implements LevelHandler
         
         if(currlevel.getNBall() == ballsNeeded)
         {
-            this.next.startWorld();
+            this.next.startWorld(lifeIter);
             user.setT2();
         }
         
@@ -142,13 +143,14 @@ public class Level2 extends World implements LevelHandler
     }
     
     
-    public void startWorld(){
+    public void startWorld(LivesIterator li){
             Greenfoot.setWorld(this);
+            lifeIter = li;
             addBall();
     }
     
     public void startNext(){
-        this.next.startWorld();
+        this.next.startWorld(lifeIter);
     }
     
     public void setNextLevel(LevelHandler NextLevel){
@@ -158,17 +160,23 @@ public class Level2 extends World implements LevelHandler
     public void displayLives()
     {
         showText("Lives:", 40, 30);
-        Goku goku = getObjects(Goku.class).get(0);
-        if (goku.countLives() == 2)
+        //Goku goku = getObjects(Goku.class).get(0);
+        //if (goku.countLives() == 2)
+        if (lifeIter.currentItem() == 2)
         {
             removeObject(life3);
         }
-        else if (goku.countLives() == 1)
+        //else if (goku.countLives() == 1)
+        else if (lifeIter.currentItem() == 1)
         {
+            removeObject(life3);
             removeObject(life2);
         }
-        else if (goku.countLives() == 0)
+        //else if (goku.countLives() == 0)
+        else if (lifeIter.currentItem() == 0)
         {
+            removeObject(life3);
+            removeObject(life2);
             removeObject(life1);
             Greenfoot.stop();
         }
@@ -182,9 +190,14 @@ public class Level2 extends World implements LevelHandler
         //addObject(hbar, 500, 30);
         if (goku.getNumOfHits() == 4)
         {
-              goku.loseLife();
+            //goku.loseLife();
+            if (!lifeIter.isDone())
+            {
+                lifeIter.next();
+            }
             goku.resetHitCount();
-            if (goku.countLives() > 0)
+            //if (goku.countLives() > 0)
+            if (lifeIter.currentItem() > 0)
             {
                 hbar100 = new Health100();
                 addObject(hbar100, 500, 30);

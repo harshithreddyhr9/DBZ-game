@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=Wish
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Level1\ here.\r\n\ \r\n\ @author\ Sai\ Harshith\r\n\ @version\ (V\ 1.0\ 11/18/2018)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Level1\ here.\n\ \n\ @author\ Sai\ Harshith\n\ @version\ (V\ 1.0\ 11/18/2018)\n
 comment1.params=l
 comment1.target=Wish(CurrentLevel)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ prepare()
-comment4.params=
-comment4.target=void\ startWorld()
+comment4.params=li
+comment4.target=void\ startWorld(LivesIterator)
 comment5.params=NextLevel
 comment5.target=void\ setNextLevel(LevelHandler)
 comment6.params=

@@ -16,6 +16,9 @@ public class Menu extends World
     private String bgImageName;
     public String username = null;
     
+    private LivesAggregate lifeAgg;
+    private LivesIterator lifeIter;
+    
     LevelHandler level1;
     LevelHandler level2;
     LevelHandler levelOneSplash;
@@ -41,6 +44,8 @@ public class Menu extends World
         playCmd = new PlayCommand();
         helpCmd = new HelpCommand();
         
+        lifeAgg = new LivesAggImpl(3);
+        lifeIter = lifeAgg.createIterator();
 
         l = new CurrentLevel();
         levelOneSplash = new LevelOneSplash(l);
@@ -96,7 +101,7 @@ public class Menu extends World
                 public void performAction()
                 {
                     if(Greenfoot.mouseClicked(buttonPlay)){
-                        level1.startWorld();
+                        level1.startWorld(lifeIter);
                     }
                 }
             });

@@ -10,6 +10,7 @@ public class LevelOneSplash extends World implements LevelHandler
 
     
     public LevelHandler next;
+    private LivesIterator lifeIter;
     
     
     public LevelOneSplash(CurrentLevel l)
@@ -25,9 +26,10 @@ public class LevelOneSplash extends World implements LevelHandler
     }
     
     
-    public void startWorld()
+    public void startWorld(LivesIterator li)
     {
         Greenfoot.setWorld(this);
+        lifeIter = li;
     }
     
     public void setNextLevel(LevelHandler NextLevel)
@@ -36,7 +38,7 @@ public class LevelOneSplash extends World implements LevelHandler
     }
     
     public void startNext(){
-        this.next.startWorld();
+        this.next.startWorld(lifeIter);
     }
     
    

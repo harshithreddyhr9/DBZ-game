@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=LevelHandler
-comment1.params=
-comment1.target=void\ startWorld()
+comment1.params=li
+comment1.target=void\ startWorld(LivesIterator)
 comment2.params=
 comment2.target=void\ startNext()
 comment3.params=NextLevel

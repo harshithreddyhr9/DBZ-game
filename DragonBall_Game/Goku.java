@@ -20,8 +20,8 @@ public class Goku extends Actor implements PointsSubject
      */
     private int ballscollected;
     private int numOfHits;  // number of hits taken
-    private LivesAggregate lifeAgg;
-    private LivesIterator lifeIter;
+    //private LivesAggregate lifeAgg;
+    //private LivesIterator lifeIter;
     public CurrentLevel l;
     public LevelHandler level;
     private ArrayList<PointsObserver> observers ;
@@ -33,8 +33,8 @@ public class Goku extends Actor implements PointsSubject
         ballscollected = 0;
         numOfHits = 0;          // have not been hit yet
         observers = new ArrayList<PointsObserver>();
-        lifeAgg = new LivesAggImpl(3);
-        lifeIter = lifeAgg.createIterator();// set up lives iterator
+        //lifeAgg = new LivesAggImpl(3);
+        //lifeIter = lifeAgg.createIterator();// set up lives iterator
         this.level = level;
         this.l = l;
     }
@@ -98,17 +98,17 @@ public class Goku extends Actor implements PointsSubject
         return this;
     }  
     
-    public void loseLife(){
+    /*public void loseLife(){
         if (!lifeIter.isDone())
         {
             lifeIter.next();
         }
-    }
+    }*/
     
-    public int countLives()
+    /*public int countLives()
     {
         return lifeIter.currentItem();
-    }
+    }*/
     
     public int getNumOfHits()       // return the num of hits sustained
     {

@@ -16,6 +16,7 @@ public class Wish extends World implements LevelHandler
     private shenronspeaks sp;
     private Gokuspeaks gp;
     private Piccolo p;
+    private LivesIterator lifeIter;
 
     public Wish(CurrentLevel l)
     {    
@@ -58,9 +59,10 @@ public class Wish extends World implements LevelHandler
         
     }
     
-    public void startWorld()
+    public void startWorld(LivesIterator li)
     {
         Greenfoot.setWorld(this);
+        lifeIter = li;
     }
     
     public void setNextLevel(LevelHandler NextLevel)
@@ -69,7 +71,7 @@ public class Wish extends World implements LevelHandler
     }
     
     public void startNext(){
-        this.next.startWorld();
+        this.next.startWorld(lifeIter);
     }
     
     public Wish getLevel(){

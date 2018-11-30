@@ -16,6 +16,8 @@ public class HighScore extends World implements LevelHandler
 
     public LevelHandler next;
     public UserDetails user;
+    private LivesIterator lifeIter;
+    
     public HighScore(CurrentLevel l)
     {    
         // Create a new world with 1200x650 cells with a cell size of 1x1 pixels.
@@ -67,9 +69,10 @@ public class HighScore extends World implements LevelHandler
        os.close();
     }
     
-    public void startWorld()
+    public void startWorld(LivesIterator li)
     {
         Greenfoot.setWorld(this);
+        lifeIter = li;
         prepare();
     }
     
@@ -79,6 +82,6 @@ public class HighScore extends World implements LevelHandler
     }
     
     public void startNext(){
-        this.next.startWorld();
+        this.next.startWorld(lifeIter);
     }
 }
