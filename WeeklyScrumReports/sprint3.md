@@ -53,3 +53,6 @@ Saumya Goyal
 1. Implement Observer Pattern fot the health bar system
 2. Draw class diagram of the health bar system
 3. Re-edit the images in the game
+
+
+### XP Core Values:
