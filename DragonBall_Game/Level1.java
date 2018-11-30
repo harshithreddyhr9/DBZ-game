@@ -27,9 +27,9 @@ public class Level1 extends World implements LevelHandler
     public DragonBall oneBall;
     public int ballPosX;
     public int ballPosY;
-    public int min_y = 1300;
-    public int max_y = 1350;
-    public int min_x = 50;
+    public int min_y = 1320;
+    public int max_y = 1330;
+    public int min_x = 90;
     public int max_x = 500;
     public int ballsCollected = 0;
     public int ballsNeeded = 3;
