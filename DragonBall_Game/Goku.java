@@ -50,9 +50,10 @@ public class Goku extends Actor implements PointsSubject
     public void checkKeyPress()
     {
         if (Greenfoot.isKeyDown("up")){
-             if(this.getY()-this.getImage().getHeight()/2 > 0)
+             if(this.getY()-this.getImage().getHeight()/2 > 0){
+                 if(this.getY()>90)
                 this.setLocation(this.getX(), this.getY() - 5);
-        }
+        }}
         if(Greenfoot.isKeyDown("down")){
             if(this.getY()+this.getImage().getHeight()/2 < getWorld().getHeight())
                 this.setLocation(this.getX(), this.getY() + 5);
