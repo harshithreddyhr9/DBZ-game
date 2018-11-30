@@ -43,7 +43,6 @@ public class Goku extends Actor implements PointsSubject
     {
         checkKeyPress();
         lookForBalls();
-
         InjuredGoku();
 
     }    
@@ -61,20 +60,24 @@ public class Goku extends Actor implements PointsSubject
     }
     public void InjuredGoku()
     {
+   
          if(isTouching(BuuFire.class))
          {         
             removeTouching(BuuFire.class);
-            numOfHits++;    // increment every hit
+            numOfHits++; 
+            notifyObservers();// increment every hit
          }
          if(isTouching(FriezaFire.class))
          {         
             removeTouching(FriezaFire.class);
             numOfHits++;    // increment every hit
+            notifyObservers();
          }
          if(isTouching(CellFire.class))
          {         
             removeTouching(CellFire.class);
             numOfHits++;    // increment every hit
+             notifyObservers();
          }
          
          
@@ -120,14 +123,17 @@ public class Goku extends Actor implements PointsSubject
       public void attach(PointsObserver obj){
         
         observers.add(obj);
+        //System.out.println(observers);
       
     }
     
     public void notifyObservers(){
-                for (int i=0; i<observers.size(); i++)
+            //observers[1].updatePoints(ballscollected, numOfHits) ;     
+        for (int i=0; i<observers.size(); i++)
         {
             PointsObserver observer = observers.get(i) ;
-            observer.updatePoints(ballscollected) ;
+            observer.updatePoints(ballscollected, numOfHits) ;
         }
+       
     }
 }

@@ -10,7 +10,7 @@ public class Level2 extends World implements LevelHandler
 {
     private Background img0, img1;
     
-    private CurrentHealth currHealth;
+    //private CurrentHealth currHealth;
     private HealthBar hbar;
     private Life life1, life2, life3;
     
@@ -30,7 +30,7 @@ public class Level2 extends World implements LevelHandler
     public int max_y = 1350;
     public int min_x = 50;
     public int max_x = 500;
-    
+    private Health100 hbar100;
     public UserDetails user;
     
     public int ballsCollected = 0;
@@ -39,15 +39,16 @@ public class Level2 extends World implements LevelHandler
     public Level2(CurrentLevel l)
     {    
         super(1240, 640, 1, false);
-        
+        hbar = new HealthBar();
+        hbar100 = new Health100();
         img0 = new Background();    // first background image
         addObject(img0, getWidth()/2, getHeight()/2);   // place middle
         img1 = new Background();    // second background image
         addObject(img1, getWidth() + getWidth()/2, getHeight()/2);
         
-        currHealth = new CurrentHealth();
-        hbar = currHealth.getCurrentHealth(0);  // health bar, num of hits 0
-        addObject(hbar, 500, 30);
+        //currHealth = new CurrentHealth();
+        //hbar = currHealth.getCurrentHealth(0);  // health bar, num of hits 0
+        addObject(hbar100, 500, 30);
         life1 = new Life();         // life counter
         addObject(life1, 100, 30);
         life2 = new Life();
@@ -122,8 +123,11 @@ public class Level2 extends World implements LevelHandler
         
         Cell c = new Cell(goku);
         addObject(c,90,535);
-        GamePoints gamepoint = new GamePoints();
+         GamePoints gamepoint = new GamePoints();
+         HealthBar hbar = new HealthBar();
         ((PointsSubject)goku).attach(gamepoint);
+        ((PointsSubject)goku).attach(hbar);
+        addObject(hbar, 300,27);
         addObject(gamepoint, 296, 27);
         
         user = UserDetails.getInstance();
@@ -173,18 +177,17 @@ public class Level2 extends World implements LevelHandler
     public void displayHealthBar()
     {
         Goku goku = getObjects(Goku.class).get(0);
-        removeObject(hbar);
-        hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
-        addObject(hbar, 500, 30);
+        //removeObject(hbar);
+        //hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
+        //addObject(hbar, 500, 30);
         if (goku.getNumOfHits() == 4)
         {
-            goku.loseLife();
+              goku.loseLife();
             goku.resetHitCount();
             if (goku.countLives() > 0)
             {
-                removeObject(hbar);
-                hbar = currHealth.getCurrentHealth(goku.getNumOfHits());
-                addObject(hbar, 500, 30);
+                hbar100 = new Health100();
+                addObject(hbar100, 500, 30);
             }
         }
     }
