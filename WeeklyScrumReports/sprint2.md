@@ -47,4 +47,5 @@ Shabari Girish Ganapathy
 1. Class Diagram to show Chain of responsibility.
 2. Place dragon balls in random order in the game.
 
+### XP Core Values
 
