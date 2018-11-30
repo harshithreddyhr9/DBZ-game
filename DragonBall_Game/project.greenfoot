@@ -346,7 +346,11 @@ editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
+<<<<<<< HEAD
 height=1027
+=======
+height=826
+>>>>>>> f5aa6298093c18b13a16419493455d0405c15008
 package.numDependencies=103
 package.numTargets=58
 project.charset=UTF-8
@@ -772,5 +776,9 @@ target9.y=0
 version=3.0.0
 width=1483
 world.lastInstantiated=Menu
+<<<<<<< HEAD
 xPosition=100
+=======
+xPosition=0
+>>>>>>> f5aa6298093c18b13a16419493455d0405c15008
 yPosition=23
