@@ -1,6 +1,7 @@
     import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
     import java.net.*;
     import java.io.*;
+    import java.util.*;
     /**
      * Write a description of class DisplayHighScore here.
      * 
@@ -27,7 +28,7 @@
         
         public void prepare(int index)
         {
-            GreenfootImage img = new GreenfootImage(300, 300);
+            GreenfootImage img = new GreenfootImage(300, 500);
             
             img.setColor(new Color(0,0,0,0));
             img.fill();
@@ -37,6 +38,7 @@
             img.drawString(text, 35, 50);
             if(!this.scoreboard.equals("No Connection")){  
                 String arr[] = this.scoreboard.split(";");
+                arr = sortScoreBoard(arr);
                 int y = 100;
                 for(String s : arr){
                     String temp[] = s.split(":");
@@ -48,6 +50,20 @@
                 img.drawString(this.scoreboard,35,100);
             }
             setImage(img);
+        }
+
+        public String [] sortScoreBoard(String [] arr)
+        {
+            Arrays.sort(arr, new Comparator<String>() {
+                public int compare(String str1, String str2) {
+                    String substr1 = str1.substring(str1.length()-3,str1.length()-1);
+                    String substr2 = str2.substring(str1.length()-3,str1.length()-1);
+            
+                    return -(Integer.valueOf(substr2).compareTo(Integer.valueOf(substr1)));
+                }
+            });
+
+            return arr;
         }
     
         public String getScoreBoard() throws Exception
