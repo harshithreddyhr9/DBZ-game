@@ -57,3 +57,8 @@ Sai Harshith Reddy Gaddam
 
 1. Use decorator pattern to display the characters when moved in a certain direction
 
+
+
+### XP Core values
+
+
