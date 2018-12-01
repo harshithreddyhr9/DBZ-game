@@ -30,7 +30,7 @@ public class Goku extends Actor implements PointsSubject
      */
     public Goku(CurrentLevel l,LevelHandler level)
     {
-        ballscollected = 0;
+        //ballscollected = 0;
         numOfHits = 0;          // have not been hit yet
         observers = new ArrayList<PointsObserver>();
         //lifeAgg = new LivesAggImpl(3);
@@ -119,6 +119,9 @@ public class Goku extends Actor implements PointsSubject
     public void resetHitCount()     // reset hit counter when life is lost
     {
         numOfHits = 0;
+    }
+    public void setNoBalls(int ballscollected){
+        this.ballscollected = ballscollected;
     }
     
       public void attach(PointsObserver obj){

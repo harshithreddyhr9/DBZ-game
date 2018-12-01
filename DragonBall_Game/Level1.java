@@ -132,6 +132,7 @@ public class Level1 extends World implements LevelHandler
         addObject(gamepoint, 296, 27);
         user = UserDetails.getInstance();
         user.setT1();
+        goku.setNoBalls(0);
     }
     
     private void addBall()
