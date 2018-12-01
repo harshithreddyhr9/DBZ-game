@@ -373,19 +373,13 @@ dependency98.type=UsesDependency
 dependency99.from=HelpCommand
 dependency99.to=Receiver
 dependency99.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-<<<<<<< HEAD
-height=836
-package.numDependencies=110
-package.numTargets=58
-=======
+editor.fx.0.height=722
+editor.fx.0.width=800
+editor.fx.0.x=320
+editor.fx.0.y=57
 height=823
 package.numDependencies=113
 package.numTargets=60
->>>>>>> 80511f9d6bbf39f656295e37b0f236cd3dfeb1c0
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -821,12 +815,7 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1548
+width=1523
 world.lastInstantiated=Menu
-<<<<<<< HEAD
-xPosition=-6
-yPosition=-6
-=======
 xPosition=0
 yPosition=23
->>>>>>> 80511f9d6bbf39f656295e37b0f236cd3dfeb1c0

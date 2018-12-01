@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Frieza extends Actor
 {
     Timer gettime = new Timer();
-     
+    GreenfootSound fireball = new GreenfootSound("friezaaaa.wav");
 
     int count = 0;
     Goku goku;
@@ -30,6 +30,7 @@ public class Frieza extends Actor
     } 
     public void attackGoku(){
         if(gettime.TimeElapsed() > 1000){
+            fireball.play();
             World world = getWorld();
             FriezaFire ff = new FriezaFire();
             world.addObject(ff, this.getX()+this.getImage().getWidth()/2, this.getY());

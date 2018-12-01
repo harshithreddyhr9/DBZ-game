@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=LevelTwoSplash
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ LevelTwoSplash\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ LevelTwoSplash\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=l
 comment1.target=LevelTwoSplash(CurrentLevel)
 comment2.params=

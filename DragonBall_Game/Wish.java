@@ -40,15 +40,14 @@ public class Wish extends World implements LevelHandler
         if(count==35)
             //addObject(sp,300,100);
             shenron.play();
-        if(count==65)
-            this.removeObject(sp);
-        if(count==90)
+        
+        if(count==220)
             addObject(gp,850,450);
-        if(count==110)
+        if(count==250)
             removeObject(gp);
-        if(count == 135)
+        if(count == 280)
             addObject(p, 750,550);
-        if(count == 160)
+        if(count == 320)
             startNext();
     }
   

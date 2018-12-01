@@ -16,7 +16,7 @@ public class LevelTwoSplash extends World implements LevelHandler
     public LevelTwoSplash(CurrentLevel l)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 542, 1); 
+        super(1240, 640, 1); 
     }
     
     public void act()
