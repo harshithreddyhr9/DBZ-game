@@ -35,11 +35,10 @@
             img.setColor(Color.WHITE);
             img.setFont(new Font("OptimusPrinceps", false, false , 25));
             
-            img.drawString(text, 35, 50);
             if(!this.scoreboard.equals("No Connection")){  
                 String arr[] = this.scoreboard.split(";");
                 arr = sortScoreBoard(arr);
-                int y = 100;
+                int y = 50;
                 for(String s : arr){
                     String temp[] = s.split(":");
                     img.drawString(temp[index],35,y);
