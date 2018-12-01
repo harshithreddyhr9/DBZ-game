@@ -17,7 +17,7 @@ Shabari Girish Ganapathy
 2. Splash screen between Level1 and Level2 to provide user a small pause.
 3. Create and mainitain a scoreboard in a server and deploy it in AWS.
 
-**Team Member Name**
+**Team Member Name**  
 Sai Harshith Reddy Gaddam  
 
 **What I did since last scrum**  
