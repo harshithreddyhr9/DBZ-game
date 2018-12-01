@@ -26,6 +26,14 @@ Sai Harshith Reddy Gaddam
 3. Updated the shenron world  
 4. Made changes to the pause screen display between levels
 
+**Team Member Name**
+Chungchen Ran
+
+**What I did since last scrum**
+1. Add icons for the lives counter.
+2. Made lives counter more dynamic.
+3. Created a basic form of the health bar system.
+
 
 ### XP Core values
 
