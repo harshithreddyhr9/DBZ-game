@@ -2,7 +2,7 @@
 This repository is for the team project for CMPE202 under Prof. Paul Nguyen.
 
 ## DragonBallZ
-The project is a dragonballz game developed usind Greenfoot IDE.
+The project is a dragonballz game developed using Greenfoot IDE.
 
 #### Basic Game Play
 Make Goku collect all 7 dragonballs to make shenron grant him a wish. Do this while evading 3 of Goku's enemies.
