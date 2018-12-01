@@ -37,17 +37,17 @@ public class Wish extends World implements LevelHandler
     
     public void act(){
     count++;
-        if(count==25)
+        if(count==35)
             addObject(sp,300,100);
-        if(count==45)
+        if(count==65)
             this.removeObject(sp);
-        if(count==70)
+        if(count==90)
             addObject(gp,850,450);
-        if(count==100)
+        if(count==110)
             removeObject(gp);
-        if(count == 115)
+        if(count == 135)
             addObject(p, 750,550);
-        if(count == 140)
+        if(count == 160)
             startNext();
     }
   
