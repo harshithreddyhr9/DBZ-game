@@ -30,7 +30,7 @@ public class Buu extends Actor
     }
     
     public void attackGoku(){
-        if(gettime.TimeElapsed() > 800){
+        if(gettime.TimeElapsed() > 1000){
             World world = getWorld();
             BuuFire bf = new BuuFire();
             world.addObject(bf, this.getX()+this.getImage().getWidth()/2, this.getY());

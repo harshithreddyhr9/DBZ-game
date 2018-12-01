@@ -28,7 +28,7 @@ public class Cell extends Actor
       
     } 
     public void attackGoku(){
-        if(gettime.TimeElapsed() > 950){
+        if(gettime.TimeElapsed() > 1000){
             World world = getWorld();
             CellFire cf = new CellFire();
             world.addObject(cf, this.getX()+this.getImage().getWidth()/2, this.getY());
