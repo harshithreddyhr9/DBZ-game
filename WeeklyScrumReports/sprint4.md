@@ -9,6 +9,13 @@ Saumya Goyal
 2. Draw class diagram of the health bar system
 3. Re-edit the images in the game
 
+**Team Member Name**  
+Shabari Girish Ganapathy
+
+**What I did since last scrum?**
+1. Fix positioning and speed of dragonballs
+2. Splash screen between Level1 and Level2 to provide user a small pause.
+3. Create and mainitain a scoreboard in a server and deploy it in AWS.
 
 ### XP Core values
 
