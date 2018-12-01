@@ -58,7 +58,9 @@ Sai Harshith Reddy Gaddam
 1. Use decorator pattern to display the characters when moved in a certain direction
 
 
-
 ### XP Core values
 
-
+#### Communication
+1. We maintained a clear communication on our slack group 
+2. Each of us gave regular updates as to what game we are thinking of implementing
+3. In our scrum meeting, we divided the tasks clearly so that there is no confusion during the implementation
