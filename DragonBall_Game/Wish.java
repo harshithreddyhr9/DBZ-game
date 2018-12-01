@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Wish extends World implements LevelHandler
 {
     
-   
+    GreenfootSound shenron = new GreenfootSound("wish.wav");
     public LevelHandler next;
     public CurrentLevel currlevel;
     int count=0;
@@ -38,7 +38,8 @@ public class Wish extends World implements LevelHandler
     public void act(){
     count++;
         if(count==35)
-            addObject(sp,300,100);
+            //addObject(sp,300,100);
+            shenron.play();
         if(count==65)
             this.removeObject(sp);
         if(count==90)

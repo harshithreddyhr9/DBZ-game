@@ -11,6 +11,7 @@ public class Cell extends Actor
     Timer gettime = new Timer();
     int count=0;
     Goku goku;
+    GreenfootSound fireball = new GreenfootSound("cell.wav");
     /**
      * Act - do whatever the Cell wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,6 +29,7 @@ public class Cell extends Actor
       
     } 
     public void attackGoku(){
+        fireball.play();
         if(gettime.TimeElapsed() > 1000){
             World world = getWorld();
             CellFire cf = new CellFire();

@@ -8,10 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Buu extends Actor
 {
+    
     Timer gettime = new Timer();
     int count=0;
     private World w = getWorld(); 
     Goku goku;
+    GreenfootSound fireball = new GreenfootSound("buu.wav");
     
     /**
      * Act - do whatever the Buu wants to do. This method is called whenever
@@ -31,8 +33,10 @@ public class Buu extends Actor
     
     public void attackGoku(){
         if(gettime.TimeElapsed() > 1000){
+            fireball.play();
             World world = getWorld();
             BuuFire bf = new BuuFire();
+            
             world.addObject(bf, this.getX()+this.getImage().getWidth()/2, this.getY());
             gettime.fire();
             
