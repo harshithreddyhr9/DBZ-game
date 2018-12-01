@@ -55,4 +55,7 @@ Saumya Goyal
 3. Re-edit the images in the game
 
 
-### XP Core Values:
+### XP Core values
+
+#### Communication
+We had a daily standup call to get the status of the tasks asigned to all of us. In this we communicated clearly as to where we were stuck, what we are going to implement next and what challenges we faced during the sprint.
