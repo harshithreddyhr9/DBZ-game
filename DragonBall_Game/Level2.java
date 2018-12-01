@@ -130,7 +130,7 @@ public class Level2 extends World implements LevelHandler
         ((PointsSubject)goku).attach(hbar);
         addObject(hbar, 300,27);
         addObject(gamepoint, 296, 27);
-        
+        goku.setNoBalls(3);
         user = UserDetails.getInstance();
     }
     
@@ -178,6 +178,7 @@ public class Level2 extends World implements LevelHandler
             removeObject(life3);
             removeObject(life2);
             removeObject(life1);
+            addObject(new GameOver(),600,300);
             Greenfoot.stop();
         }
     }

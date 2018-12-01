@@ -39,6 +39,7 @@ public class HighScore extends World implements LevelHandler
        }catch(Exception e){
            //do nothing
        }
+       addObject(new Text("Scoreboard"),600,100);
        addObject(new DisplayHighScore(user.getUserName(),0),600,300);
        addObject(new DisplayHighScore(user.getScore(),1),800,300);
     }
