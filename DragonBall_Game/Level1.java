@@ -185,6 +185,7 @@ public class Level1 extends World implements LevelHandler
             removeObject(life3);
             removeObject(life2);
             removeObject(life1);
+            addObject(new GameOver(),600,300);
             Greenfoot.stop();
         }
     }
