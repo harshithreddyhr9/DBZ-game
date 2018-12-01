@@ -25,8 +25,8 @@ The actual game server has been hosted on AWS EC2 and the game by default connec
 ![aws_sever](server/aws.png)
 
 #### Starting the game
-1. Clone the repo and use Greenfoot IDE to run the game and make changes.
-2. Use JAR file provided in ExecutableGame folder to run the game directly as a stand alone application.
+1. Clone the repo and use Greenfoot IDE to run the game and make modifications.
+
 
 ### UML Documentation
 
