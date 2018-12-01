@@ -11,7 +11,7 @@ Make Goku collect all 7 dragonballs to make shenron grant him a wish. Do this wh
 
 #### Starting the server
 
-The following are the procedures to start the game locally.
+The following are the procedures to start the server locally.
 
 Requirements : 
 1. python3
