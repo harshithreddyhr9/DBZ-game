@@ -47,5 +47,9 @@ Shabari Girish Ganapathy
 1. Class Diagram to show Chain of responsibility.
 2. Place dragon balls in random order in the game.
 
-### XP Core Values
+### XP Core values
+
+#### Courage
+After the first scrum, we decided to modify our game a little. Everyone was open to the change and showed courage for trying the new    gameplan and modify their patterns accordingly.
+
 
